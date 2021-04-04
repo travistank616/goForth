@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    <script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 13px;
+            display: flex;
+            flex-direction: column;
+            max-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        .members-count,
+        .members-list,
+        .messages {
+            border: 1px solid #e4e4e4;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .messages {
+            flex-shrink: 1;
+            overflow: auto;
+        }
+
+        .message {
+            padding: 5px 0;
+        }
+
+        .message .member {
+            display: inline-block;
+        }
+
+        .member {
+            padding-right: 10px;
+            position: relative;
+        }
+
+        .message-form {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .message-form__input {
+            flex-grow: 1;
+            border: 1px solid #dfdfdf;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .message-form__button {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="columns">
+        <div class="column is-2">
+            <!--GoForth Logo and Homescreen Link-->
+            <div class="container">
+                Go Forth
+            </div>
+            <!--DM Box-->
+            <div class="container">
+                [DM Box]
+            </div>
+            <!--Party Box-->
+            <div class="container">
+                [Party Box]
+            </div>
+            <!--Campaign Notes Link-->
+            <div class="container">
+                [Campaign Notes]
+            </div>
+        </div>
+
+        <div class="column is-7">
+            <div class="container">
+                [Character Name] [Level]
+            </div>
+            <div class="container">
+                Central Window:
+                -controlled by DM
+                -display current map
+                -display images
+                -display videos
+            </div>
+        </div>
+
+        <div class="column is-3">
+            <div class="container">
+                [HP] [AC] [Speed]
+            </div>
+            <div class="columns">
+                <div class="column is one-fourth">
+                    <!--Skill value display-->
+                    <div class="container">
+
+                    </div>
+                </div>
+                <div class="column">
+                    <!--Currently equipped item-->
+                    <div class="container">
+                        [Equipped]
+                    </div>
+                    <!--Spells and Feats-->
+                    <div class="container">
+                        [Spells]
+                        [Feats]
+                    </div>
+                </div>
+            </div>
+            <!--Chat Box-->
+            <div class="container">
+                <!--<div class="members-count">-</div>
+                <div class="members-list">-</div>-->
+                <div class="messages"></div>
+                <form class="message-form" onsubmit="return false;">
+                    <input class="message-form__input" placeholder="Type a message.." type="text" />
+                    <input class="message-form__button" value="Send" type="submit" />
+                </form>
+                <script src="./script.js"></script>
+            </div>
+        </div>
+
+    </section>
+
+
+
+</body>
+
+</html>
