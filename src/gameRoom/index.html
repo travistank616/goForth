@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    <script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>
+
+    <link rel="stylesheet" href="bulma.min.css" />
+    <link rel="stylesheet" href="style.css" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+    <section class="columns is-centered is-gapless">
+        <div class="column is-2 is-centered" style="padding-right: 0; height: 100vh; margin-bottom: 0">
+            <!--GoForth Logo and Homescreen Link-->
+            <div class="container" style="padding-bottom: 5px; height: 5vh">
+                Go Forth
+            </div>
+            <!--DM Box-->
+            <div class="container" style="height: 26vh">
+
+                <img src="../../public/dmImage.jpeg" />
+
+            </div>
+            <!--Party Box-->
+            <div class="container" style="height: 50vh">
+                [Party Box]
+            </div>
+            <!--Campaign Notes Link-->
+            <div class="container" style="height: 19vh">
+                <div id="footer">
+                    [Campaign Notes]
+                </div>
+            </div>
+        </div>
+
+        <div class="column is-7" style="padding-left: 0; padding-right: 0">
+            <div class="container" style="height: 5vh">
+                [Character Name] [Level]
+            </div>
+            <div class="container" style="height: 95vh">
+                Central Window:
+                -controlled by DM
+                -display current map
+                -display images
+                -display videos
+            </div>
+        </div>
+
+        <div class="column is-3">
+            <div class="container" style="height: 5vh">
+                <div class="columns is-gapless">
+                    <div class="column">
+                        [HP]
+                    </div>
+                    <div class="column">
+                        [AC]
+                    </div>
+                    <div class="column">
+                        [Speed]
+                    </div>
+                </div>
+            </div>
+            <div class="columns is-gapless" style="margin-bottom: 0;">
+                <div class="column is-one-quarter" style="height: 72vh">
+                    <!--Skill value display-->
+                    <div class="container" style="height: 12vh">
+                        <p style="font-size: 1vw">Str: </p>
+                    </div>
+                    <div class="container" style="height: 12vh">
+                        <p style="font-size: 1vw">Dex: </p>
+                    </div>
+                    <div class="container" style="height: 12vh">
+                        <p style="font-size: 1vw">Const: </p>
+                    </div>
+                    <div class="container" style="height: 12vh">
+                        <p style="font-size: 1vw">Int: </p>
+                    </div>
+                    <div class="container" style="height: 12vh">
+                        <p style="font-size: 1vw">Wis: </p>
+                    </div>
+                    <div class="container" style="height: 12vh">
+                        <p style="font-size: 1vw">Char: </p>
+                    </div>
+                </div>
+                <div class="column">
+                    <!--Currently equipped item-->
+                    <div class="container" style="height: 30vh">
+                        [Equipped]
+                    </div>
+                    <!--Spells and Feats-->
+                    <div class="container" style="height: 42vh">
+                        [Spells]
+                        [Feats]
+                    </div>
+                </div>
+            </div>
+            <!--Chat Box-->
+            <div class="container" style="height: 23vh;">
+                <!--<div class="members-count">-</div>
+                <div class="members-list">-</div>-->
+                <div class="messages" style="line-height: 14px"></div>
+                <form class="message-form" onsubmit="return false;">
+                    <input class="message-form__input" placeholder="Type a message.." type="text" />
+                </form>
+                <script src="./script.js"></script>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
