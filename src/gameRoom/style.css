@@ -20,6 +20,7 @@
   overflow-y: scroll;
   overflow-x: wrap;
   border-spacing: 0px;
+  height: 20vh;
 }
 
 .message {
@@ -47,9 +48,10 @@
 .message-form__input {
   flex-grow: 1;
   border: 1px solid #dfdfdf;
-  padding: 10px 15px;
+  padding: 0px;
   font-size: 12px;
-  size: 14px;
+  size: 12px;
+  height: 3.5vh;
 }
 
 .message-form__button {
