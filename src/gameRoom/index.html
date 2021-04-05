@@ -4,91 +4,44 @@
 <head>
     <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
     <script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+
+    <link rel="stylesheet" href="bulma.min.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <style>
-        body {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 13px;
-            display: flex;
-            flex-direction: column;
-            max-height: 100vh;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        .members-count,
-        .members-list,
-        .messages {
-            border: 1px solid #e4e4e4;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-
-        .messages {
-            flex-shrink: 1;
-            overflow: auto;
-        }
-
-        .message {
-            padding: 5px 0;
-        }
-
-        .message .member {
-            display: inline-block;
-        }
-
-        .member {
-            padding-right: 10px;
-            position: relative;
-        }
-
-        .message-form {
-            display: flex;
-            flex-shrink: 0;
-        }
-
-        .message-form__input {
-            flex-grow: 1;
-            border: 1px solid #dfdfdf;
-            padding: 10px 15px;
-            font-size: 16px;
-        }
-
-        .message-form__button {
-            margin: 10px;
-        }
-    </style>
 </head>
 
 <body>
-    <section class="columns">
-        <div class="column is-2">
+    <section class="columns is-centered is-gapless">
+        <div class="column is-2 is-centered" style="padding-right: 0; height: 100vh; margin-bottom: 0">
             <!--GoForth Logo and Homescreen Link-->
-            <div class="container">
+            <div class="container" style="padding-bottom: 5px; height: 5vh">
                 Go Forth
             </div>
             <!--DM Box-->
-            <div class="container">
-                [DM Box]
+            <div class="container" style="height: 26vh">
+                <figure class="image container">
+                    <img src="../../public/dmImage.jpeg" />
+                </figure>
             </div>
             <!--Party Box-->
-            <div class="container">
+            <div class="container" style="height: 50vh">
                 [Party Box]
             </div>
             <!--Campaign Notes Link-->
-            <div class="container">
-                [Campaign Notes]
+            <div class="container" style="height: 19vh">
+                <div id="footer">
+                    [Campaign Notes]
+                </div>
             </div>
         </div>
 
-        <div class="column is-7">
-            <div class="container">
+        <div class="column is-7" style="padding-left: 0; padding-right: 0">
+            <div class="container" style="height: 5vh">
                 [Character Name] [Level]
             </div>
-            <div class="container">
+            <div class="container" style="height: 95vh">
                 Central Window:
                 -controlled by DM
                 -display current map
@@ -99,13 +52,38 @@
 
         <div class="column is-3">
             <div class="container">
-                [HP] [AC] [Speed]
+                <div class="columns">
+                    <div class="column">
+                        [HP]
+                    </div>
+                    <div class="column">
+                        [AC]
+                    </div>
+                    <div class="column">
+                        [Speed]
+                    </div>
+                </div>
             </div>
-            <div class="columns">
+            <div class="columns is-gapless">
                 <div class="column is one-fourth">
                     <!--Skill value display-->
                     <div class="container">
-
+                        Strength:
+                    </div>
+                    <div class="container">
+                        Dexterity:
+                    </div>
+                    <div class="container">
+                        Constitution:
+                    </div>
+                    <div class="container">
+                        Intelligence:
+                    </div>
+                    <div class="container">
+                        Wisdom:
+                    </div>
+                    <div class="container">
+                        Charisma:
                     </div>
                 </div>
                 <div class="column">
@@ -124,19 +102,14 @@
             <div class="container">
                 <!--<div class="members-count">-</div>
                 <div class="members-list">-</div>-->
-                <div class="messages"></div>
+                <div class="messages" style="line-height: 14px"></div>
                 <form class="message-form" onsubmit="return false;">
                     <input class="message-form__input" placeholder="Type a message.." type="text" />
-                    <input class="message-form__button" value="Send" type="submit" />
                 </form>
                 <script src="./script.js"></script>
             </div>
         </div>
-
     </section>
-
-
-
 </body>
 
 </html>
