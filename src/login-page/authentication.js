@@ -1,5 +1,20 @@
 function handleAuth() {
-  // retrieve email/password data
+
+  //firebase sign up code from their website.. 
+  /*firebase.auth().createUserWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    // Signed in 
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ..
+  });
+ */
+ 
+   // retrieve email/password data
   let email = document.getElementById("email").nodeValue;
   let password = document.getElementById("password").nodeValue;
 
@@ -11,7 +26,7 @@ function handleAuth() {
 function handleLogIn(email, password) {
 
 
-}
+}/*
 
 function handleSignUp(email, password) {
   //check for confirmed password match
