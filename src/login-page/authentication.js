@@ -40,11 +40,15 @@ function handleSignUp(email, password) {
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       //user is logged in
-      var uid = user.uid;
-      // otherwise, user is logged out
+    if (!window.location.href.includes("game")) {
+      window.location.href = "./gameRoom/index.html";
+    }
+      // otherwise, user is logged out and navigated back to our sign-in page
     } else {
-      // User is signed out
-      // ...
+      if (window.location.href.includes("game")) {
+        window.location.href = "login-page/loginPage.html";
+      }
+
     }
   });
 
