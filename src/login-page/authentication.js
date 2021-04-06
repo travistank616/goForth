@@ -26,15 +26,32 @@ function handleSignUp(email, password) {
     // check that email and password is long enough
     // TODO: make good requirements for eamil/password
     if (email.length < 4) {
-      alert("Email not valid!");
+      alert("This is not a valid email. Please try again.");
       return;
     } else if (password.length < 4) {
-      alert("Password not valid");
+      alert("Password not strong enough. Please make the password stronger.");
       return;
     }
 
+    firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .catch(function(error) {
+      // Handle Errors here.
+      let errorCode = error.code;
+      let errorMessage = error.message;
+      if (errorCode === "auth/wrong-password") {
+        alert("This is the wrong password, please try again.");
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+      document.getElementById("quickstart-sign-in").disabled = false;
+    });
     // at this point email and password should be approved
   }
+
+
   //once the users authenticated 
   //TODO: navigate from login page to the actual game once they are logged in.
   firebase.auth().onAuthStateChanged((user) => {
