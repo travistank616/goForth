@@ -35,7 +35,8 @@ function handleSignUp(email, password) {
 
     // at this point email and password should be approved
   }
-
+  //once the users authenticated 
+  //TODO: navigate from login page to the actual game once they are logged in.
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
       //user is logged in
