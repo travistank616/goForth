@@ -68,4 +68,9 @@ function handleSignUp(email, password) {
 
     }
   });
+  
 
+  //This will be the final function, for logging a user out of the game completely.
+  function LogOff () {
+    firebase.auth().signOut();
+  } 
