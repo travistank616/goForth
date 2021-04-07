@@ -1,0 +1,11 @@
+.block:not(:last-child) {
+  margin-bottom: 20%;
+}
+
+body {
+  font-family: Garamond, serif;
+}
+
+.button {
+  font-family: inherit;
+}
