@@ -201,7 +201,7 @@ function getRandomColor() {
   return "#" + Math.floor(Math.random() * 0xffffff).toString(16);
 }
 
-//------------- DOM STUFF
+//------------- DOM STUFF ---------------//
 
 const DOM = {
   membersCount: document.querySelector(".members-count"),
@@ -229,6 +229,7 @@ function createMemberElement(member) {
   const { name, color } = member.clientData;
   const el = document.createElement("div");
   el.appendChild(document.createTextNode(name));
+  el.appendChild(document.createTextNode(":"));
   el.className = "member";
   el.style.color = color;
   return el;
@@ -247,6 +248,8 @@ function createMessageElement(text, member) {
   el.appendChild(createMemberElement(member));
   el.appendChild(document.createTextNode(text));
   el.className = "message";
+  el.style.color = "white";
+  el.style.backgroundColor = "none";
   return el;
 }
 
