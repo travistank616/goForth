@@ -15,27 +15,33 @@
 .messages {
   display: block;
   /*flex-shrink: 1;*/
+  border: none;
   width: 100%;
   height: 100px;
   overflow-y: scroll;
   overflow-x: wrap;
   border-spacing: 0px;
   height: 20vh;
+  background-color: black;
 }
 
 .message {
   padding-top: 0px;
   font-size: 12px;
   margin: 0;
+  background-color: transparent;
+  border: none;
 }
 
 .message .member {
   display: inline-block;
   margin: 0;
+  border: none;
 }
 
 .member {
   padding-right: 10px;
+  padding-left: 5px;
   position: relative;
   margin: 0;
 }
@@ -47,11 +53,17 @@
 
 .message-form__input {
   flex-grow: 1;
-  border: 1px solid #dfdfdf;
-  padding: 0px;
+  border: none;
+  padding: 4px;
   font-size: 12px;
   size: 12px;
   height: 3.5vh;
+  background-color: rgb(18, 31, 31);
+  color: white;
+}
+
+.message-form__input:focus {
+  border: 2px solid orangered;
 }
 
 .message-form__button {
@@ -61,4 +73,8 @@
 
 div {
   outline: 1px solid lightseagreen;
+}
+
+::placeholder {
+  color: white;
 }
