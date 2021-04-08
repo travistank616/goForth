@@ -1,8 +1,9 @@
 function handleAuth() {
   
    // retrieve email/password data
-  let email = document.getElementById("email").nodeValue;
-  let password = document.getElementById("password").nodeValue;
+  const userId = document.getElementById("userId");
+  const email = document.getElementById("email").nodeValue;
+  const password = document.getElementById("password").nodeValue;
 
 
   document.getElementById("sign-in-toggle").innerText.trim() !== "Log in" ?
@@ -13,9 +14,9 @@ function handleAuth() {
 
 //Connecting to database
 let database  = firebase.database();
-handleLogIn.addEventListener('click', (e) => {
+handleSignUp.addEventListener('click', (e) => {
     e.preventDefault();
-    database.ref('/email/' + email.nodeValue).set({
+    database.ref('/userid/' + userid.nodeValue).set({
       email : email.value,
       password : password.value
 
