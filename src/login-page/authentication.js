@@ -10,6 +10,20 @@ function handleAuth() {
     this.handleSignUp(email, password);
 }
 
+
+//Connecting to database
+let database  = firebase.database();
+handleLogIn.addEventListener('click', (e) => {
+    e.preventDefault();
+    database.ref('/email/' + email.nodeValue).set({
+      email : email.value,
+      password : password.value
+
+    });
+});
+
+
+
 function handleLogIn(email, password) {
   firebase
   .auth()
