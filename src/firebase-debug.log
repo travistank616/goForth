@@ -1,0 +1,82 @@
+[debug] [2021-04-08T22:24:03.202Z] ----------------------------------------------------------------------
+[debug] [2021-04-08T22:24:03.203Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jeremy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-04-08T22:24:03.203Z] CLI Version:   9.9.0
+[debug] [2021-04-08T22:24:03.203Z] Platform:      win32
+[debug] [2021-04-08T22:24:03.203Z] Node Version:  v14.16.1
+[debug] [2021-04-08T22:24:03.204Z] Time:          Thu Apr 08 2021 17:24:03 GMT-0500 (Central Daylight Time)
+[debug] [2021-04-08T22:24:03.204Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-08T22:24:03.208Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-08T22:24:03.209Z] > authorizing via signed-in user (jeremydyess96@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Jeremy\Desktop\GoForthWebsite
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-04-08T22:24:17.969Z] > refreshing access token with scopes: []
+[debug] [2021-04-08T22:24:17.969Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-04-08T22:24:18.336Z] <<< HTTP RESPONSE 200 {"date":"Thu, 08 Apr 2021 22:24:20 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-04-08T22:24:18.353Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-04-08T22:24:18.800Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-04-08T22:24:18.800Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project go-forth-22331 (Go Forth) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2021-04-08T22:25:39.851Z] ----------------------------------------------------------------------
+[debug] [2021-04-08T22:25:39.853Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Jeremy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-04-08T22:25:39.853Z] CLI Version:   9.9.0
+[debug] [2021-04-08T22:25:39.853Z] Platform:      win32
+[debug] [2021-04-08T22:25:39.853Z] Node Version:  v14.16.1
+[debug] [2021-04-08T22:25:39.854Z] Time:          Thu Apr 08 2021 17:25:39 GMT-0500 (Central Daylight Time)
+[debug] [2021-04-08T22:25:39.854Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-04-08T22:25:39.859Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-04-08T22:25:39.859Z] > authorizing via signed-in user (goforthdnd@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Jeremy\Desktop\GoForthWebsite
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-04-08T22:25:50.145Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-04-08T22:25:50.632Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-04-08T22:25:50.632Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project go-forth-735be (Go Forth) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
