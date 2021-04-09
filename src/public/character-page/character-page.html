@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width-device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="scripts.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+</head>
+
+<body style="background-image: url(../../public/gameRoomBackground.jpeg); background-color: darkslategrey;">
+  <nav class="navbar has-shadow is-dark" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand" style="padding-left: 5px; padding-top: 3px">
+      <figure class="image is-48x48">
+        <img src="../../public/goForthIcon.png" />
+      </figure>
+
+      <!--Load in current user's Username below-->
+      <a class="navbar-item" style="padding-left: 20px" href="#">
+        <strong>[username]</strong>
+      </a>
+    </div>
+
+    <div class="container">
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Friends </a>
+
+            <!--Populate dropdown menu with all online friends-->
+            <div class="navbar-dropdown">
+              <a class="navbar-item" href="#"> [friend 1] </a>
+              <a class="navbar-item" href="#"> [friend 2] </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!------------------Main body section------------------->
+
+  <section class="section" style="height: 12vh; padding-bottom: 0; padding-top: 2vh; padding-right: 0; padding-left: 0">
+    <div class="columns is-vcentered" style="height: 100%; background-color: #fff;">
+      <div class="column is-3 has-text-centered">
+        <div class="container">
+          <h2>[Character Name]</h2>
+        </div>
+      </div>
+
+      <div class="column is-5 has-text-centered" style="height: auto">
+        <div class="container">
+          <h2>Skills</h2>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="columns is-vcentered is-gapless">
+          <div class="column has-text-centered">
+            [Level]
+          </div>
+          <div class="column has-text-centered">
+            [AC]
+          </div>
+          <div class="column has-text-centered">
+            [XP]
+          </div>
+        </div>
+      </div>
+  </section>
+
+
+  <section class="section"
+    style="margin-top: 0; height: 77vh; padding-bottom: 0; padding-top: 0; padding-right: 0; padding-left: 0">
+    <div class="columns is-multiline" style="height: 100%">
+      <div class="column has-text-centered">
+        <div class="column has-text-centered" style="height: 40%">
+          <a>Biography</a>
+        </div>
+        <div class="column has-text-centered" style="height: 15%">
+          <a>[proficiencies]</a>
+        </div>
+        <div class="column has-text-centered" style="height: 15%">
+          <a>[languages]</a>
+        </div>
+        <div class="column has-text-centered" style="height: 15%">
+          <a>[allies]</a>
+        </div>
+        <div class="column has-text-centered" style="height: 15%">
+          <a>[faith]</a>
+        </div>
+      </div>
+
+      <div class="column is-5 has-text-centered">
+        <div class="columns is-multiline is-gapless" style="height: 100%">
+          <div class="column is-6" style="height: 40%">
+            <div class="box" style="border: 2px orangered; height: 93%; margin: 7px">
+              [Spells]
+            </div>
+          </div>
+          <div class="column is-6" style="height: 40%">
+            <div class="box" style="height: 93%; margin: 7px">
+              [Attacks]
+            </div>
+          </div>
+          <div class="column is-12" style="height: 60%">
+            <div class="box" style="height: 95%; margin: 7px">
+              [Features and Traits]
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4 has-text-centered" style="background-color: rgb(38, 39, 41);">
+        <div class="columns is-multiline is-gapless" style="height: 100%">
+          <div class="column is-full has-text-centered" style="height: 40%">
+            <h2 class="text" style="padding-top: 4%; color: white;">Equipped</h2>
+          </div>
+          <div class="column is-full has-text-centered" style="height: 56%">
+            <h2 class="text" style="color: white;">Inventory</h2>
+          </div>
+          <div class="column is-full has-text-centered" style="height: 4%">
+            <h2 class="text" style="color: white;">Currency</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--<div class="colmun is-4">
+    <div class="box">
+      <h2>Name:</h2>
+      <h3>Marcus Dupont</h3>
+    </div>
+    <div class="box">
+      <h2>Age:</h2>
+      <h3>22</h3>
+    </div>
+    <div class="box">
+      <h2>Gender:</h2>
+      <h3>Male</h3>
+    </div>
+    <div class="box">
+      <h2>Class:</h2>
+      <h3>Bard</h3>
+    </div>
+    <div class="box">
+      <h2>Other Information:</h2>
+    </div>
+  </div>
+  </div>-->
+
+
+  <section class="hero is-dark" style="margin-top: 0vh;">
+    <div class="hero-body">
+      <div class="columns" style="height: 10vh">
+
+        <div class="column is-half has-text-centered">
+          <div class="block">
+            <p class="has-text-grey">
+              <a href="" style="color: rgb(235, 235, 243)">Privacy Policy</a> &nbsp;
+            </p>
+          </div>
+        </div>
+
+        <div class="column has-text-centered">
+          <div class="block">
+            <p class="has-text-grey">
+              <a href="" style="color: rgb(131, 131, 212)">Customer Support</a> &nbsp;
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bulma credit -->
+    <div class="block" style="margin: auto; padding-bottom: 5%" href="https://bulma.io" target="_blank">
+      <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24" />
+    </div>
+  </section>
+
+  <script>
+
+  </script>
+
+</body>
+
+</html>
