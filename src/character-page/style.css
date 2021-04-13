@@ -1,15 +1,339 @@
-/*div {
-  outline: 1px solid black;
-}*/
-
-.column {
-  padding: 0;
-}
-
-.columns.is-gapless:not(:last-child) {
-  margin-bottom: 0;
-}
-
 body {
-  font-family: Garamond, serif;
+  font-family: "Gill Sans", sans-serif;
+  color: black;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.characterHeader {
+  display: flex;
+  justify-content: space-around;
+  height: 115px;
+}
+
+.characterName {
+  font-size: 2em;
+  position: relative;
+  font-family: MedievalSharp, cursive;
+}
+
+.characterInfo {
+  position: relative;
+  color: #454545;
+}
+
+.characterBanner {
+  width: 400px;
+}
+
+.backgroundBanner {
+  position: absolute;
+  max-width: 30%;
+  left: 1em;
+}
+
+.characterHeader > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.characterHeader > .skillSpace > div {
+  margin-right: 20px;
+}
+
+.characterHeader > .keyValues > div {
+  margin-right: 20px;
+}
+
+.skillLevel {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 14px;
+}
+
+.skillBonus {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  top: 8px;
+  font-size: 1.5em;
+}
+
+.skillPlac {
+  width: 75px;
+}
+
+.skillBackground {
+  position: absolute;
+  max-width: 75px;
+  top: 68px;
+}
+
+.valueBlock {
+  width: 75px;
+}
+
+.hpBackground,
+.acBackground {
+  position: absolute;
+  max-width: 75px;
+  top: 68px;
+}
+
+.characterHealth,
+.characterAC {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  bottom: 5px;
+  font-size: 1.2em;
+}
+
+.initiativeBlock {
+  position: relative;
+  font-size: 1.2em;
+}
+
+.proficiencyBlock {
+  position: relative;
+  font-size: 1.2em;
+}
+
+.initiativeBackground {
+  position: absolute;
+}
+
+.proficiencyBackground {
+  position: absolute;
+  max-height: 31px;
+}
+
+.characterInitiative,
+.characterProficiency {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  font-size: 1.2em;
+}
+
+.initLabel,
+.profLabel {
+  position: relative;
+  font-size: 0.6em;
+  justify-content: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.charSheetMiddleSection {
+  display: flex;
+  justify-content: space-around;
+}
+
+.leftColumn {
+  justify-content: center;
+  height: 40em;
+  width: 25em;
+}
+
+.biographyBlock {
+  display: flex;
+  justify-content: center;
+  height: max-content;
+}
+
+.bioBackground {
+  position: absolute;
+  max-width: 350px;
+}
+
+.bioTextBox {
+  display: flex;
+  justify-content: center;
+  width: 20em;
+  padding-top: 2em;
+}
+
+.textarea:not([rows]) {
+  min-height: 7em;
+}
+
+#bioTextBox {
+  background-color: transparent;
+  font-size: 0.8em;
+  resize: none;
+  min-height: 25em;
+}
+
+.charDetailsBlock {
+  display: flex;
+  justify-content: center;
+  height: max-content;
+  padding-top: 4em;
+}
+
+.charDetailsBackground {
+  position: absolute;
+  max-width: 350px;
+}
+
+.detailsTextBox {
+  display: flex;
+  justify-content: center;
+  width: 20em;
+  padding-top: 2em;
+}
+
+#detailsTextBox {
+  background-color: transparent;
+  font-size: 0.8em;
+  resize: none;
+  min-height: 10.5em;
+}
+
+.middleColumn {
+  width: 600px;
+}
+
+.middleBlockBackground {
+  max-width: 600px;
+  position: absolute;
+}
+
+.attacksNSpells {
+  display: flex;
+  justify-content: space-around;
+  padding: 2em;
+}
+
+.featuresBlock {
+  padding: 2em;
+}
+
+.spellsBlock {
+  width: 15em;
+}
+
+.attacksBlock {
+  width: 15em;
+  margin-left: 3em;
+}
+
+#spellsTextBox,
+#attacksTextBox,
+#featuresTextBox {
+  background-color: transparent;
+  font-size: 0.8em;
+  resize: none;
+  height: 9em;
+}
+
+.rightColumn {
+  padding-left: 1em;
+  width: 25em;
+}
+
+.rightBlockBackground {
+  position: absolute;
+  max-width: 350px;
+}
+
+.equippedBlock {
+  padding: 2em;
+  padding-right: 4em;
+}
+
+.inventoryBlock {
+  padding: 2em;
+  padding-right: 4em;
+}
+
+#equippedTextBox,
+#inventoryTextBox {
+  background-color: transparent;
+  font-size: 0.8em;
+  resize: none;
+}
+
+#equippedTextBox {
+  height: 17em;
+}
+
+#inventoryTextBox {
+  height: 22em;
+}
+
+/***************NAVBAR STYLES***************/
+.navbar {
+  color: white;
+  background-color: #090809;
+}
+
+.navbar-item,
+.navbar-link {
+  color: white;
+}
+
+.navbar-link.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+a.navbar-item.is-active,
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover {
+  color: inherit;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  /* border-color: #3273dc; */
+  border-color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-dropdown {
+    /* background-color: #fff; */
+    /* border-bottom-left-radius: 6px; */
+    /* border-bottom-right-radius: 6px; */
+    /* border-top: 2px solid #dbdbdb; */
+    background-color: #090809;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top: 2px solid #e40712;
+  }
+}
+
+.navbar-dropdown {
+  /* padding-bottom: .5rem; */
+  /* padding-top: .5rem; */
+  padding: 2px;
+}
+
+.navbar-dropdown a.navbar-item {
+  padding-right: 5rem;
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  background-color: #2b262b;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar-item.has-dropdown:focus .navbar-link,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent;
+  }
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  color: white;
+  background-color: #2f1111;
+}
+
+.navbar.has-shadow {
+  box-shadow: 0 2px 0 0 #e40712;
 }
