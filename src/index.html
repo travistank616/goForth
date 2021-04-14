@@ -11,10 +11,10 @@
             <a href="index.html"><img src="images/logo.png"></a>
             <div class="nav-links">
                 <ul>
-                    <li><a href="login-page/loginPage.html">Login</a></li>
-                    <li><a href="">ABOUT</a></li>
-                    <li><a href="">LOGIN</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="login-page/loginPage.html">LOGIN</a></li>
+                    <li><a href="about-page/about-page.html">ABOUT</a></li>
+                    <li><a href="profile-page/profile-page.html">PROFILE</a></li>
+                    <li><a href="contact-page/contact-page.html">CONTACT US</a></li>
                 </ul>
             </div>
         </nav>
@@ -24,11 +24,36 @@
             <p>
                 Welcome to Go Forth!, an online virtual table top to connect with your friends and play tabletop games!
             </p>
-            <a href="">Login to Get Rolling!</a>
+            <a href="login-page/loginPage.html" class="login-btn">Login to Get Rolling!</a>
         </div>
     </section>
 
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
 
+<script>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  var firebaseConfig = {
+    apiKey: "AIzaSyB1Nex5M3sDGXZmO4c7tdX49Q7nK29oGa0",
+    authDomain: "go-forth-735be.firebaseapp.com",
+    databaseURL: "https://go-forth-735be-default-rtdb.firebaseio.com",
+    projectId: "go-forth-735be",
+    storageBucket: "go-forth-735be.appspot.com",
+    messagingSenderId: "334936808560",
+    appId: "1:334936808560:web:372b319f84170a804168b5",
+    measurementId: "G-5PD0C8HW5B"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
+<script src="index.js"></script>
 </body>
 </html>

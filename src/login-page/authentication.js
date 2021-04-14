@@ -1,9 +1,8 @@
 function handleAuth() {
   
    // retrieve email/password data
-  const userId = document.getElementById("userId");
-  const email = document.getElementById("email").nodeValue;
-  const password = document.getElementById("password").nodeValue;
+  let email = document.getElementById("email").nodeValue;
+  let password = document.getElementById("password").nodeValue;
 
 
   document.getElementById("sign-in-toggle").innerText.trim() !== "Log in" ?
@@ -14,9 +13,9 @@ function handleAuth() {
 
 //Connecting to database
 let database  = firebase.database();
-handleSignUp.addEventListener('click', (e) => {
+handleLogIn.addEventListener('click', (e) => {
     e.preventDefault();
-    database.ref('/userid/' + userid.nodeValue).set({
+    database.ref('/email/' + email.nodeValue).set({
       email : email.value,
       password : password.value
 
@@ -28,7 +27,10 @@ handleSignUp.addEventListener('click', (e) => {
 function handleLogIn(email, password) {
   firebase
   .auth()
-  .signInWithEmailAndPassword(email, password)
+  .signInWithEmailAndPassword(email, password).then((userCredential) => {
+    // Signed in
+    var user = userCredential.user;
+  })
   .catch(function(error) {
     // TODO: alert the user to these properly
     console.log(error.code);
@@ -87,5 +89,7 @@ function handleSignUp(email, password) {
 
   //This will be the final function, for logging a user out of the game completely.
   function LogOff () {
-    firebase.auth().signOut();
+    firebase.auth().signOut().catch((error) => {
+      // An error happened.
+    });;
   } 
