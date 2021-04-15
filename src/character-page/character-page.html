@@ -6,13 +6,15 @@
   <meta name="viewport" content="width-device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
   <script src="scripts.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
 </head>
 
 <body style="background-image: url(../../public/gameRoomBackground.jpeg); background-color: darkslategrey;">
-  <nav class="navbar has-shadow is-dark" role="navigation" aria-label="main navigation">
+  <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand" style="padding-left: 5px; padding-top: 3px">
       <figure class="image is-48x48">
         <img src="../../public/goForthIcon.png" />
@@ -40,123 +42,222 @@
       </div>
     </div>
   </nav>
-
   <!------------------Main body section------------------->
-
-  <section class="section" style="height: 12vh; padding-bottom: 0; padding-top: 2vh; padding-right: 0; padding-left: 0">
-    <div class="columns is-vcentered" style="height: 100%; background-color: #fff;">
-      <div class="column is-3 has-text-centered">
-        <div class="container">
-          <h2>[Character Name]</h2>
+  <section class="characterSheet">
+    <div class="characterHeader">
+      <div class="characterBanner">
+        <div class="backgroundBanner">
+          <img class="image" src="../../public/characterBanner.png">
         </div>
-      </div>
-
-      <div class="column is-5 has-text-centered" style="height: auto">
-        <div class="container">
-          <h2>Skills</h2>
+        <div class="characterName">
+          <p>Grog</p>
         </div>
-      </div>
-
-      <div class="column is-4">
-        <div class="columns is-vcentered is-gapless">
-          <div class="column has-text-centered">
-            [Level]
+        <div class="characterInfo">
+          <div class="characterRaceClass">
+            <p>Half-Orc Barbarian</p>
           </div>
-          <div class="column has-text-centered">
-            [AC]
-          </div>
-          <div class="column has-text-centered">
-            [XP]
+          <div class="characterLevel">
+            <p>Level 21</p>
           </div>
         </div>
       </div>
+
+      <div class="skillSpace">
+        <div class="skillBlock">
+          <div class="skillPlac">
+            <div class="skillBackground">
+              <img class="image" src="../../public/strengthPlac.png">
+            </div>
+            <div class="skillBonus">
+              <p>+3</p>
+            </div>
+            <div class="skillLevel">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+        <div class="skillBlock">
+          <div class="skillPlac">
+            <div class="skillBackground">
+              <img class="image" src="../../public/dexPlac.png">
+            </div>
+            <div class="skillBonus">
+              <p>+3</p>
+            </div>
+            <div class="skillLevel">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+        <div class="skillBlock">
+          <div class="skillPlac">
+            <div class="skillBackground">
+              <img class="image" src="../../public/conPlac.png">
+            </div>
+            <div class="skillBonus">
+              <p>+3</p>
+            </div>
+            <div class="skillLevel">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+        <div class="skillBlock">
+          <div class="skillPlac">
+            <div class="skillBackground">
+              <img class="image" src="../../public/intelPlac.png">
+            </div>
+            <div class="skillBonus">
+              <p>+3</p>
+            </div>
+            <div class="skillLevel">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+        <div class="skillBlock">
+          <div class="skillPlac">
+            <div class="skillBackground">
+              <img class="image" src="../../public/wisPlac.png">
+            </div>
+            <div class="skillBonus">
+              <p>+3</p>
+            </div>
+            <div class="skillLevel">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+        <div class="skillBlock">
+          <div class="skillPlac">
+            <div class="skillBackground">
+              <img class="image" src="../../public/charismaPlac.png">
+            </div>
+            <div class="skillBonus">
+              <p>+3</p>
+            </div>
+            <div class="skillLevel">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="keyValues">
+        <div class="valuesWrapper">
+          <div class="valueBlock">
+            <div class="hpBackground">
+              <img class="image" src="../../public/hpBackground.png">
+            </div>
+            <div class="characterHealth">
+              <p>58 / 65</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="valuesWrapper">
+          <div class="valueBlock">
+            <div class="acBackground">
+              <img class="image" src="../../public/acBackground.png">
+            </div>
+            <div class="characterAC">
+              <p>15</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="valuesWrapper">
+          <div class="valueBlock">
+            <div class="initiativeBlock">
+              <div class="initiativeBackground">
+                <img class="image" src="../../public/initiativeBackground2.png">
+              </div>
+              <div class="characterInitiative">
+                <p>+4</p>
+              </div>
+              <div class="initLabel">
+                <p>INITIATIVE</p>
+              </div>
+            </div>
+            <div class="proficiencyBlock">
+              <div class="proficiencyBackground">
+                <img class="image" src="../../public/proficiencyBackground.png">
+              </div>
+              <div class="characterProficiency">
+                <p>+2</p>
+              </div>
+              <div class="profLabel">
+                <p>PROFICIENCY</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="charSheetMiddleSection">
+      <div class="leftColumn">
+        <div class="biographyBlock">
+          <div class="bioBackground">
+            <img class="image" src="../../public/bioBackground.png">
+          </div>
+          <div class="bioTextBox">
+            <textarea id="bioTextBox" class="textarea" placeholder="Biography here..."></textarea>
+          </div>
+        </div>
+        <div class="charDetailsBlock">
+          <div class="charDetailsBackground">
+            <img class="image" src="../../public/proficienciesBackground.png">
+          </div>
+          <div class="detailsTextBox">
+            <textarea id="detailsTextBox" class="textarea" placeholder="Other details here..."></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="middleColumn">
+        <div class="middleBlock">
+          <div class="middleBlockBackground">
+            <img class="image" src="../../public/middleTablet.png">
+          </div>
+          <div class="attacksNSpells">
+            <div class="spellsBlock">
+              <textarea id="spellsTextBox" class="textarea" placeholder="Spells here..."></textarea>
+            </div>
+            <div class="attacksBlock">
+              <textarea id="attacksTextBox" class="textarea" placeholder="Attacks here..."></textarea>
+            </div>
+          </div>
+          <div class="featuresNProficiencies">
+            <div class="featuresBlock">
+              <textarea id="featuresTextBox" class="textarea" placeholder="Features and traits here..."></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rightColumn">
+        <div class="rightBlock">
+          <div class="rightBlockBackground">
+            <img class="image" src="../../public/equipAndInventoryBackground.png">
+          </div>
+          <div class="equippedBlock">
+            <textarea id="equippedTextBox" class="textarea" placeholder="Currently equipped items here..."></textarea>
+          </div>
+          <div class="inventoryBlock">
+            <textarea id="inventoryTextBox" class="textarea" placeholder="Current inventory here..."></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
 
-  <section class="section"
-    style="margin-top: 0; height: 77vh; padding-bottom: 0; padding-top: 0; padding-right: 0; padding-left: 0">
-    <div class="columns is-multiline" style="height: 100%">
-      <div class="column has-text-centered">
-        <div class="column has-text-centered" style="height: 40%">
-          <a>Biography</a>
-        </div>
-        <div class="column has-text-centered" style="height: 15%">
-          <a>[proficiencies]</a>
-        </div>
-        <div class="column has-text-centered" style="height: 15%">
-          <a>[languages]</a>
-        </div>
-        <div class="column has-text-centered" style="height: 15%">
-          <a>[allies]</a>
-        </div>
-        <div class="column has-text-centered" style="height: 15%">
-          <a>[faith]</a>
-        </div>
-      </div>
-
-      <div class="column is-5 has-text-centered">
-        <div class="columns is-multiline is-gapless" style="height: 100%">
-          <div class="column is-6" style="height: 40%">
-            <div class="box" style="border: 2px orangered; height: 93%; margin: 7px">
-              [Spells]
-            </div>
-          </div>
-          <div class="column is-6" style="height: 40%">
-            <div class="box" style="height: 93%; margin: 7px">
-              [Attacks]
-            </div>
-          </div>
-          <div class="column is-12" style="height: 60%">
-            <div class="box" style="height: 95%; margin: 7px">
-              [Features and Traits]
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="column is-4 has-text-centered" style="background-color: rgb(38, 39, 41);">
-        <div class="columns is-multiline is-gapless" style="height: 100%">
-          <div class="column is-full has-text-centered" style="height: 40%">
-            <h2 class="text" style="padding-top: 4%; color: white;">Equipped</h2>
-          </div>
-          <div class="column is-full has-text-centered" style="height: 56%">
-            <h2 class="text" style="color: white;">Inventory</h2>
-          </div>
-          <div class="column is-full has-text-centered" style="height: 4%">
-            <h2 class="text" style="color: white;">Currency</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--<div class="colmun is-4">
-    <div class="box">
-      <h2>Name:</h2>
-      <h3>Marcus Dupont</h3>
-    </div>
-    <div class="box">
-      <h2>Age:</h2>
-      <h3>22</h3>
-    </div>
-    <div class="box">
-      <h2>Gender:</h2>
-      <h3>Male</h3>
-    </div>
-    <div class="box">
-      <h2>Class:</h2>
-      <h3>Bard</h3>
-    </div>
-    <div class="box">
-      <h2>Other Information:</h2>
-    </div>
-  </div>
-  </div>-->
-
-
-  <section class="hero is-dark" style="margin-top: 0vh;">
+  <!-------------------Footer section--------------------->
+  <section class="hero is-dark">
     <div class="hero-body">
-      <div class="columns" style="height: 10vh">
+      <div class="columns">
 
         <div class="column is-half has-text-centered">
           <div class="block">

@@ -3,9 +3,228 @@
 }
 
 body {
-  font-family: Garamond, serif;
+  font-family: "Gill Sans", sans-serif";
 }
 
 .button {
   font-family: inherit;
+  font-weight: inherit;
 }
+
+.dropdown {
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown.button {
+  background-color: transparent;
+  border-color: ;
+}
+
+.dropdown-trigger {
+  width: 100%;
+}
+
+.dropdown-content {
+  width: 100%;
+  background-color: #131113;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-left: 0;
+  border-radius: 0;
+  border-bottom-left-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+.dropdown-menu {
+  text-align: center;
+  padding-top: 0;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+  min-width: 100%;
+}
+
+.dropdown-item {
+}
+
+.dropStyle {
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
+}
+
+#mainSection {
+  background-image: url(../../public/dungeonbackground.jpg);
+  background-position: center;
+  background-size: auto;
+  background-color: darkslategrey;
+  height: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section {
+  /* height: 85vh; */
+  height: 100%;
+}
+
+.columns:last-child {
+  /* margin-bottom: -.75rem; */
+  margin-bottom: 0;
+}
+
+.columns {
+  /* margin-left: -.75rem; */
+  /* margin-right: -.75rem; */
+  /* margin-top: -.75rem; */
+}
+
+.section {
+  /* padding: 3rem 1.5rem; */
+}
+
+div.is-centered > div:nth-child(1) > div:nth-child(1) {
+  /* margin-top: 18%; */
+  margin-top: 0;
+}
+
+.block {
+  margin-bottom: 0;
+}
+
+div.is-centered > div:nth-child(1) {
+  /* padding-left: 4vw; */
+  margin-bottom: 14%;
+  margin-top: 8%;
+}
+
+.block:not(:last-child) {
+  /* margin-bottom: 20%; */
+  margin-bottom: 28%;
+}
+
+.dropdown-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.button.full {
+  width: 100%;
+  background-image: url(../../public/blkTexture.svg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: revert;
+}
+
+#leftCol {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+#mapsButton {
+  background-color: transparent;
+  border-color: #3298dc;
+  color: white;
+}
+
+#cmpButton {
+  background-color: transparent;
+  border-color: #72e672;
+  color: white;
+}
+
+#charButton {
+  background-color: transparent;
+  border-color: #e40712;
+  color: white;
+}
+
+.button.is-hovered,
+.button:hover {
+  border-width: 2px;
+}
+
+.dropdown-item {
+  color: white;
+}
+
+a.dropdown-item:hover {
+  background-color: #2b262b;
+  color: white;
+}
+
+.navbar {
+  color: white;
+  background-color: #090809;
+}
+
+.navbar-item,
+.navbar-link {
+  color: white;
+}
+
+.navbar-link.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+a.navbar-item.is-active,
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover {
+  color: inherit;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  /* border-color: #3273dc; */
+  border-color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-dropdown {
+    /* background-color: #fff; */
+    /* border-bottom-left-radius: 6px; */
+    /* border-bottom-right-radius: 6px; */
+    /* border-top: 2px solid #dbdbdb; */
+    background-color: #090809;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top: 2px solid #e40712;
+  }
+}
+
+.navbar-dropdown {
+  /* padding-bottom: .5rem; */
+  /* padding-top: .5rem; */
+  padding: 2px;
+}
+
+.navbar-dropdown a.navbar-item {
+  padding-right: 5rem;
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  background-color: #2b262b;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar-item.has-dropdown:focus .navbar-link,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent;
+  }
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  color: white;
+  background-color: #2f1111;
+}
+
+.navbar.has-shadow {
+  box-shadow: 0 2px 0 0 #e40712;
+}
+
+.button.is-focused:not(:active), .button:focus:not(:active) {
+  box-shadow: none;
+} 
