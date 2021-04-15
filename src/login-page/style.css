@@ -1,0 +1,48 @@
+.hero.has-background {
+  position: relative;
+  overflow: hidden;
+}
+.hero-background {
+  position: fixed;
+  object-fit: cover;
+  object-position: center center;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-background.is-transparent {
+  opacity: 0.6;
+}
+
+.button,
+.file-cta,
+.file-name,
+.input,
+.pagination-ellipsis,
+.pagination-link,
+.pagination-next,
+.pagination-previous,
+.select select,
+.textarea {
+  border: 1px solid transparent;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+}
+.button {
+  border-color: #dbdbdb;
+  border-width: none;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: calc(0.5em - 1px);
+  border: none;
+}
+.button.is-light {
+  border-color: transparent;
+  margin-left: -2em;
+  margin-right: -2em;
+  background-color: #31f286;
+  color: rgba(0, 0, 0, 0.7);
+}
