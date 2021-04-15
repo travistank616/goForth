@@ -265,6 +265,49 @@ body {
   height: 22em;
 }
 
+/***************TEXT BOX STYLES***************/
+#characterName {
+  background-color: transparent;
+  font-size: inherit;
+  font-family: inherit;
+  font-size: 35px;
+  min-height: 1em;
+  max-width: 7em;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  height: 1.5em;
+  resize: none;
+  overflow: hidden;
+}
+
+#characterRace {
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 0.9em;
+  min-height: 1em;
+  max-width: 7em;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  height: 1.5em;
+  resize: none;
+  overflow: hidden;
+}
+
+#characterLevel {
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 0.8em;
+  min-height: 1em;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  height: 1.5em;
+  resize: none;
+  overflow: hidden;
+}
+
 /***************NAVBAR STYLES***************/
 .navbar {
   color: white;

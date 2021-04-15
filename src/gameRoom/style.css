@@ -2,6 +2,10 @@
   display: grid;
 }
 
+body {
+  color: black;
+}
+
 .members-count,
 .members-list,
 .messages {
