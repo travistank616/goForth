@@ -53,7 +53,7 @@ body {
 }
 
 #mainSection {
-  background-image: url(../../images/dungeonbackground.jpg);
+  background-image: url(../images/dungeonbackground.jpg);
   background-position: center;
   background-size: auto;
   background-color: darkslategrey;
@@ -109,7 +109,7 @@ div.is-centered > div:nth-child(1) {
 
 .button.full {
   width: 100%;
-  background-image: url(../../images/blkTexture.png);
+  background-image: url(../images/blkTexture.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
