@@ -6,6 +6,15 @@ body {
   color: black;
 }
 
+#mapGrid {
+  background-image: url(../images/Maps/forestMap.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/**************************************************/
+/**************** Chat Box Styles *****************/
+/**************************************************/
 .members-count,
 .members-list,
 .messages {
