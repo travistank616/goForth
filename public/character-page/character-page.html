@@ -73,117 +73,145 @@
       </div>
 
       <div class="skillSpace">
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/strengthPlac.png">
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/strengthPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="strengthBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="strengthLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/dexPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/dexPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="dexBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="dexLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/conPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/conPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="constBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="constLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/intelPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/intelPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="intBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="intLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/wisPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/wisPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="wisBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="wisLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/charismaPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/charismaPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="charBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="charLevel" class="input" type="text">
             </div>
           </div>
         </div>
       </div>
 
       <div class="keyValues">
-        <div class="valuesWrapper">
-          <div class="valueBlock">
+        <div id="hpBlock" class="valuesWrapper">
+          <div class="valuesBlock">
             <div class="hpBackground">
               <img class="image" src="../images/hpBackground.png">
             </div>
-            <div class="characterHealth">
-              <p>58 / 65</p>
+            <div class="charHealthBlock">
+              <div class="currentHP">
+                <input id="currentHP" class="input" type="text">
+              </div>
+              <span id="healthQ">/</span>
+              <div class="currentMaxHP">
+                <input id="currentMaxHP" class="input" type="text">
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="valuesWrapper">
-          <div class="valueBlock">
+
+        <div id="acBlock" class="valuesWrapper">
+          <div class="valuesBlock">
             <div class="acBackground">
               <img class="image" src="../images/acBackground.png">
             </div>
-            <div class="characterAC">
-              <p>15</p>
+            <div class="charACBlock">
+              <div class="currentAC">
+                <input id="currentAC" class="input" type="text">
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="valuesWrapper">
-          <div class="valueBlock">
+        <div id="otherValBlock" class="valuesWrapper">
+          <div class="valuesBlock">
             <div class="initiativeBlock">
               <div class="initiativeBackground">
-                <img class="image" src="../images/initiativeBackground2.png">
+                <img id="initiativeBackground" class="image" src="../images/initiativeBackground2.png">
               </div>
-              <div class="characterInitiative">
-                <p>+4</p>
+              <div class="charInitiativeBlock">
+                <div class="charInitiative">
+                  <input id="charInitiative" class="input" type="text">
+                </div>
               </div>
               <div class="initLabel">
                 <p>INITIATIVE</p>
@@ -191,13 +219,27 @@
             </div>
             <div class="proficiencyBlock">
               <div class="proficiencyBackground">
-                <img class="image" src="../images/proficiencyBackground.png">
+                <img id="proficiencyBackground" class="image" src="../images/proficiencyBackground.png">
               </div>
-              <div class="characterProficiency">
-                <p>+2</p>
+              <div class="charProficiencyBlock">
+                <div class="charProficiency">
+                  <input id="charProficiency" class="input" type="text">
+                </div>
               </div>
               <div class="profLabel">
                 <p>PROFICIENCY</p>
+              </div>
+            </div>
+          </div>
+          <div id="speedBlock" class="valuesBlock">
+            <div class="speedBlock">
+              <div class="speedBackground">
+                <img id="speedBackground" class="image" src="../images/speedPlac.png">
+              </div>
+              <div class="charSpeedBlock">
+                <div class="charSpeed">
+                  <input id="charSpeed" class="input" type="text">
+                </div>
               </div>
             </div>
           </div>
