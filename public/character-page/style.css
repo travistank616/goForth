@@ -15,6 +15,9 @@ body {
   font-size: 2em;
   position: relative;
   font-family: MedievalSharp, cursive;
+  width: 60%;
+  height: 60%;
+  top: 5%;
 }
 
 .characterInfo {
@@ -214,6 +217,7 @@ body {
 
 .spellsBlock {
   width: 15em;
+  min-width: 15em;
 }
 
 .attacksBlock {
@@ -238,6 +242,7 @@ body {
 .rightBlockBackground {
   position: absolute;
   max-width: 350px;
+  min-width: 350px;
 }
 
 .equippedBlock {
@@ -255,6 +260,7 @@ body {
   background-color: transparent;
   font-size: 0.8em;
   resize: none;
+  min-width: 288px;
 }
 
 #equippedTextBox {

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+	<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>
+
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+	<link rel="stylesheet" href="style.css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+</head>
+
+<body>
+	<section class="columns is-centered is-gapless">
+		<div id="leftColumn" class="column is-centered">
+			<!--GoForth Logo and Homescreen Link-->
+			<div id="logoBlock" class="block">
+				<img id="gameRoomLogo" class="image" src="../images/goForthIconHorizontal.png"></img>
+			</div>
+			<div class="broadcastSpace">
+				<div id="broadcastSpace" class="columns is-gapless is-multiline is-vcentered">
+					<!-------------------------DM Box------------------------->
+					<div id="dmBlock" class="column is-12">
+						<div id="selectRoom">
+							<label for="name">Type your Name</label>
+							<input id="name" type="text" />
+							<label for="roomNumber">Type the room number</label>
+							<input id="roomNumber" type="text" />
+							<button id="joinBroadcaster">Join as Broadcaster</button>
+							<button id="joinViewer">Join as Viewer</button>
+						</div>
+
+						<div id="consultingRoom" style="display:none">
+							<video autoplay></video>
+							<<p id="broadcasterName">
+								</p>
+						</div>
+					</div>
+					<!-------------------------Party Box----------------------->
+					<div id="partyBlock" class="column">
+						<div class="currentPartyBlock">
+							<div class="partyBackground">
+								<img id="partyBackground" class="image" src="../images/partyBackground.png">
+							</div>
+							<div class="partyList">
+								<ul id="viewers"></ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!------------------------Campaign Notes Link------------------->
+			<div class="campNotesBlock">
+				<div id="campNotes">
+					<textarea id="campNotes" class="textarea" placeholder="Campaign Notes..."></textarea>
+				</div>
+			</div>
+		</div>
+
+		<div id="middleColumn" class="column" style="padding-left: 0; padding-right: 0">
+			<div class="charBannerSpace">
+				<div class="bannerBackground">
+					<img id="bannerBackground" class="image" src="../images/characterBanner.png">
+				</div>
+				<div class="charNameBlock">
+					<div class="charName">
+						<textarea id="charName" class="textarea"></textarea>
+					</div>
+				</div>
+			</div>
+
+			<div class="mapBlock">
+				<img id="currentMap" class="image" src="../images/Maps/forestMap.png">
+			</div>
+		</div>
+
+		<div id="rightColumn" class="column">
+			<div class="keyValuesSpace">
+				<div class="valuesWrapper">
+					<div class="valuesBlock">
+						<div class="hpBackground">
+							<img class="image" src="../images/hpBackground.png">
+						</div>
+						<div class="charHealthBlock">
+							<div class="currentHP">
+								<input id="currentHP" class="input" type="text">
+							</div>
+							<span id="healthQ">/</span>
+							<div class="currentMaxHP">
+								<input id="currentMaxHP" class="input" type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="valuesWrapper">
+					<div class="valuesBlock">
+						<div class="acBackground">
+							<img class="image" src="../images/acBackground.png">
+						</div>
+						<div class="charACBlock">
+							<div class="currentAC">
+								<input id="currentAC" class="input" type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="valuesWrapper">
+					<div class="valuesBlock">
+						<div class="initiativeBlock">
+							<div class="initiativeBackground">
+								<img id="initiativeBackground" class="image" src="../images/initiativeBackground2.png">
+							</div>
+							<div class="charInitiativeBlock">
+								<div class="charInitiative">
+									<input id="charInitiative" class="input" type="text">
+								</div>
+							</div>
+							<div class="initLabel">
+								<p>INITIATIVE</p>
+							</div>
+						</div>
+						<div class="proficiencyBlock">
+							<div class="proficiencyBackground">
+								<img id="proficiencyBackground" class="image" src="../images/proficiencyBackground.png">
+							</div>
+							<div class="charProficiencyBlock">
+								<div class="charProficiency">
+									<input id="charProficiency" class="input" type="text">
+								</div>
+							</div>
+							<div class="profLabel">
+								<p>PROFICIENCY</p>
+							</div>
+						</div>
+					</div>
+					<div id="speedBlock" class="valuesBlock">
+						<div class="speedBlock">
+							<div class="speedBackground">
+								<img id="speedBackground" class="image" src="../images/speedPlac.png">
+							</div>
+							<div class="charSpeedBlock">
+								<div class="charSpeed">
+									<input id="charSpeed" class="input" type="text">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div id="skillsNPossessionsSpace" class="columns is-gapless" style="margin-bottom: 0;">
+				<div id="skillSpace" class="column is-one-quarter">
+					<!--------------------------Skill values-------------------------->
+					<div class="skillBlockWrapper">
+						<div class="skillBlock">
+							<div class="skillBackgroundBlock">
+								<div class="skillBackground">
+									<img id="skillBackground" class="image" src="../images/strengthPlac.png">
+								</div>
+							</div>
+							<div class="skillBonus">
+								<input id="strengthBonus" class="input" type="text">
+							</div>
+							<div class="skillLevel">
+								<input id="strengthLevel" class="input" type="text">
+							</div>
+						</div>
+					</div>
+
+					<div class="skillBlockWrapper">
+						<div class="skillBlock">
+							<div class="skillBackgroundBlock">
+								<div class="skillBackground">
+									<img id="skillBackground" class="image" src="../images/dexPlac.png">
+								</div>
+							</div>
+							<div class="skillBonus">
+								<input id="dexBonus" class="input" type="text">
+							</div>
+							<div class="skillLevel">
+								<input id="dexLevel" class="input" type="text">
+							</div>
+						</div>
+					</div>
+
+					<div class="skillBlockWrapper">
+						<div class="skillBlock">
+							<div class="skillBackgroundBlock">
+								<div class="skillBackground">
+									<img id="skillBackground" class="image" src="../images/conPlac.png">
+								</div>
+							</div>
+							<div class="skillBonus">
+								<input id="constBonus" class="input" type="text">
+							</div>
+							<div class="skillLevel">
+								<input id="constLevel" class="input" type="text">
+							</div>
+						</div>
+					</div>
+
+					<div class="skillBlockWrapper">
+						<div class="skillBlock">
+							<div class="skillBackgroundBlock">
+								<div class="skillBackground">
+									<img id="skillBackground" class="image" src="../images/intelPlac.png">
+								</div>
+							</div>
+							<div class="skillBonus">
+								<input id="intBonus" class="input" type="text">
+							</div>
+							<div class="skillLevel">
+								<input id="intLevel" class="input" type="text">
+							</div>
+						</div>
+					</div>
+
+					<div class="skillBlockWrapper">
+						<div class="skillBlock">
+							<div class="skillBackgroundBlock">
+								<div class="skillBackground">
+									<img id="skillBackground" class="image" src="../images/wisPlac.png">
+								</div>
+							</div>
+							<div class="skillBonus">
+								<input id="wisBonus" class="input" type="text">
+							</div>
+							<div class="skillLevel">
+								<input id="wisLevel" class="input" type="text">
+							</div>
+						</div>
+					</div>
+
+					<div class="skillBlockWrapper">
+						<div class="skillBlock">
+							<div class="skillBackgroundBlock">
+								<div class="skillBackground">
+									<img id="skillBackground" class="image" src="../images/charismaPlac.png">
+								</div>
+							</div>
+							<div class="skillBonus">
+								<input id="charBonus" class="input" type="text">
+							</div>
+							<div class="skillLevel">
+								<input id="charLevel" class="input" type="text">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="charPosessionsSpace" class="column">
+					<!--Currently equipped item-->
+					<div class="equippedBlock">
+						<div class="equippedBackgroundBlock">
+							<div class="equippedBackground">
+								<img id="equippedBackground" class="image" src="../images/equippedBackground.png">
+							</div>
+						</div>
+						<div class="equippedTextBox">
+							<textarea id="equippedTextBox" class="textarea"></textarea>
+						</div>
+					</div>
+					<!--Spells and Feats-->
+					<div class="spellsNfeatsBlock">
+						<div class="spellFeatBackgroundBlock">
+							<div class="spellFeatBackground">
+								<img id="spellFeatBackground" class="image" src="../images/spellsFeatsBackground.png">
+							</div>
+						</div>
+						<div class="spellFeatTextBox">
+							<textarea id="spellFeatTextBox" class="textarea"></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--Chat Box-->
+			<div id="chatBox" class="container" style="height: 23vh;">
+				<!--<div class="members-count">-</div>
+				<div class="members-list">-</div>-->
+				<div class="messages" style="line-height: 14px"></div>
+				<form class="message-form" onsubmit="return false;">
+					<input class="message-form__input" placeholder="Type a message.." type="text" onfocus="''" />
+				</form>
+				<script src="./script.js"></script>
+
+			</div>
+		</div>
+	</section>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="client.js"></script>
+</body>
+
+</html>

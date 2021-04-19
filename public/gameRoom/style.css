@@ -4,6 +4,8 @@
 
 body {
   color: black;
+  background-image: url(../images/gameRoomBackground.jpeg);
+  background-color: darkslategrey;
 }
 
 #mapGrid {
@@ -12,9 +14,415 @@ body {
   background-repeat: no-repeat;
 }
 
+#logoBlock {
+  padding: 1em;
+  margin-bottom: 0;
+  width: auto;
+}
+
+#leftColumn {
+  min-width: 20%;
+}
+
+#gameRoomLogo {
+  object-fit: scale-down;
+  position: relative;
+}
+
+.broadcastSpace {
+  display: inline-block;
+  flex-direction: column;
+}
+
+#broadcastSpace {
+  display: flex;
+}
+
+#selectRoom {
+  min-height: 12em;
+  max-width: 100%;
+}
+
+#consultingRoom {
+  height: 12em;
+}
+
+.currentPartyBlock {
+  padding: 0.5em;
+}
+
+#partyBlock {
+  max-width: 50vw;
+}
+
+#campNotes {
+  background-color: white;
+  resize: none;
+  min-height: 3em;
+}
+
+.columns.is-gapless:not(:last-child) {
+  margin-bottom: 0;
+}
+.columns:not(:last-child) {
+  margin-bottom: 0;
+}
+
+/*****************Middle Column********************/
+#middleColumn {
+  min-width: 50%;
+}
+
+.charBannerSpace {
+  height: 5em;
+  display: flex;
+  justify-content: center;
+}
+
+.bannerBackground {
+  position: absolute;
+  max-width: 400px;
+}
+
+#bannerBackground {
+  position: relative;
+}
+
+.charName {
+  position: relative;
+  font-family: MedievalSharp, cursive;
+  width: 300px;
+  height: 1em;
+  min-height: 1em;
+  max-height: 1em;
+}
+
+#charName {
+  max-height: 1.6em;
+  min-height: 1.5em;
+  position: relative;
+  top: 0.5em;
+  text-align: center;
+  resize: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 2em;
+}
+
+.charNameBlock {
+  display: flex;
+  align-content: center;
+  text-align: center;
+}
+
+.mapBlock {
+  max-height: 40em;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#currentMap {
+  position: relative;
+  object-fit: scale-down;
+}
+
+/******************Right Column********************/
+#rightColumn {
+  min-width: 30%;
+}
+
+.keyValuesSpace {
+  height: 5em;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.valuesWrapper {
+  width: 4.8em;
+  text-align: center;
+}
+
+.valuesBlock {
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+.hpBackground {
+  position: absolute;
+  max-width: 75px;
+}
+
+.charHealthBlock,
+.charACBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  top: 1.2em;
+  position: relative;
+  width: 80%;
+}
+
+.currentHP,
+.currentMaxHP,
+.currentAC {
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  max-width: 1.2em;
+  height: 1.2em;
+  font-size: 1.2em;
+}
+
+#currentHP,
+#currentMaxHP,
+#currentAC {
+  height: 100%;
+  line-height: 0.2em;
+  width: 100%;
+  font-size: small;
+  text-align: center;
+  padding: 0;
+  border-width: 1px;
+}
+
+#healthQ {
+  font-size: 1.2em;
+}
+
+.acBackground {
+  max-width: 70px;
+  position: absolute;
+}
+
+.initiativeBlock,
+.proficiencyBlock {
+  position: relative;
+  min-width: 75px;
+}
+
+.initiativeBackground,
+.proficiencyBackground {
+  position: absolute;
+}
+
+.proficiencyBackground {
+  padding: 0.2em;
+  padding-top: 0;
+}
+#initiativeBackground,
+#proficiencyBackground {
+  position: relative;
+}
+
+.charInitiativeBlock,
+.charProficiencyBlock {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.charInitiative,
+.charProficiency {
+  position: relative;
+  max-width: 1.5em;
+  height: 1.2em;
+  font-size: 1.2em;
+  top: 0.25em;
+}
+
+#charInitiative,
+#charProficiency {
+  height: 100%;
+  padding: 0;
+  text-align: center;
+}
+
+.initLabel,
+.profLabel {
+  font-size: 0.6em;
+  position: relative;
+  font-weight: bold;
+  top: 0.6em;
+}
+
+.speedBackground {
+  position: absolute;
+  min-width: 8em;
+}
+
+.speedBlock {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 0.1em;
+}
+
+#speedBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.charSpeedBlock {
+  position: relative;
+  left: 2em;
+}
+
+.charSpeed {
+  position: relative;
+  max-width: 1.5em;
+  font-size: 1.2em;
+}
+
+#charSpeed {
+  height: 1.8em;
+  top: 0.6em;
+  left: 0.6em;
+  padding: 0;
+  text-align: center;
+}
+
+#skillsNPossessionsSpace {
+  display: flex;
+}
+
+#skillSpace {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 67px;
+  padding-top: 0.5em;
+  text-align: center;
+}
+
+.skillBlockWrapper {
+  height: 5.5em;
+  text-align: center;
+  justify-content: center;
+}
+
+.skillBlock {
+  text-align: center;
+  display: grid;
+  align-items: center;
+  height: 5.5em;
+}
+
+.skillLevel {
+  position: relative;
+  bottom: 2px;
+}
+
+.skillBonus {
+  position: relative;
+  font-size: 1.5em;
+  height: 80%;
+  width: 67px;
+}
+
+.input,
+.textarea {
+  background-color: transparent;
+  border-radius: 2px;
+}
+
+#strengthBonus,
+#dexBonus,
+#constBonus,
+#intBonus,
+#wisBonus,
+#charBonus {
+  width: 50%;
+  height: 90%;
+  padding: 0;
+  top: 0.2em;
+  font-size: 1em;
+  text-align: center;
+}
+
+#strengthLevel,
+#dexLevel,
+#constLevel,
+#intLevel,
+#wisLevel,
+#charLevel {
+  padding: 0;
+  height: 90%;
+  line-height: 0.2em;
+  width: 30%;
+  font-size: small;
+  text-align: center;
+  top: 0.2em;
+  font-weight: bold;
+}
+
+.skillPlac {
+  width: 75px;
+}
+
+.skillBackground {
+  position: absolute;
+  max-width: 67px;
+  min-width: 67px;
+}
+
+#skillBackground {
+  position: relative;
+}
+
+.equippedBlock {
+  height: 15em;
+}
+
+.equippedBackground {
+  position: absolute;
+  padding: 0.3em;
+  min-width: 300px;
+}
+
+#equippedBackground {
+  position: relative;
+}
+
+.equippedTextBox {
+  padding: 1.5em;
+  max-height: 100%;
+}
+
+#equippedTextBox {
+  background-color: transparent;
+  resize: none;
+  overflow-y: scroll;
+}
+
+.spellFeatBackground {
+  position: absolute;
+  padding: 0.3em;
+  min-width: 300px;
+}
+
+#spellFeatBackground {
+  position: relative;
+}
+
+.spellFeatTextBox {
+  padding: 1.5em;
+}
+
+#spellFeatTextBox {
+  background-color: transparent;
+  resize: none;
+  overflow-y: scroll;
+}
+
 /**************************************************/
 /**************** Chat Box Styles *****************/
 /**************************************************/
+#chatBox {
+  height: auto;
+}
+
 .members-count,
 .members-list,
 .messages {
@@ -44,6 +452,10 @@ body {
   margin: 0;
   background-color: transparent;
   border: none;
+}
+
+.message:not(:last-child) {
+  margin-bottom: 0;
 }
 
 .message .member {
@@ -82,10 +494,6 @@ body {
 .message-form__button {
   margin: 10px;
   font-size: 12px;
-}
-
-div {
-  outline: 1px solid lightseagreen;
 }
 
 ::placeholder {
