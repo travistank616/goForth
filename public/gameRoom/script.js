@@ -1,77 +1,35 @@
-// DRAG SPRITE ======================================================================
-dragElement(document.getElementById("my-sprite"));
+// CLICK-TO-MOVE SPRITE =============================================================
 
-function dragElement(el) {
-  var pos1 = 0,
-    pos2 = 0,
-    pos3 = 0,
-    pos4 = 0;
-  el.onmousedown = dragMouseDown;
+var battleMap = document.querySelector("#map-box");
+var spriteID;
 
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.prevenDefault();
-    // get mouse cursor position at startup
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  }
+// Watch for clicks on the battle map, and place sprite
+// at location of the click.
+battleMap.addEventListener("click", function (event) {
+  const rect = battleMap.getBoundingClientRect();
+  var x = event.clientX;
+  var y = event.clientY - (rect.top - 60);
 
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calc new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set new sprite position
-    el.style.top = el.offsetTop - pos2 + "px";
-    el.style.left = el.offsetLeft - pos1 + "px";
-  }
+  document.getElementById("my-sprite-group").innerHTML +=
+    '<div id="' +
+    spriteID +
+    '"class="charSprite absolute" style="top: ' +
+    y +
+    "px; left: " +
+    x +
+    'px" onclick="deleteSprite(this)"></div>';
+});
 
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
+// Click active sprite to hide.
+function deleteSprite(sprite) {
+  sprite.style.display = "none";
 }
 
-// CLICK-TO-MOVE SPRITE =============================================================
-document.addEventListener("DOMContentLoaded", function () {
-  const ele = document.getElementById("map-box");
-  const sprite = document.getElementById("my-sprite");
-
-  ele.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    const rect = ele.getBoundingClientRect();
-    const x = e.clientX;
-    const y = e.clientY - (rect.top - 60);
-
-    // set menu position
-    sprite.style.setProperty("--mouse-y", y + "px");
-    sprite.style.setProperty("--mouse-x", x + "px");
-
-    //show the menu
-    sprite.classList.remove("hidden");
-
-    document.addEventListener("click", documentClickHandler);
-  });
-
-  const documentClickHandler = function (e) {
-    const isClicked = sprite.contains(e.target);
-    if (isClicked) {
-      // hide the menu
-      sprite.classList.add("hidden");
-
-      // remove the even handler
-      document.removeEventListener("click", documentClickHandler);
-    }
-  };
-});
+// Click desired sprite from the box o' sprites
+// to make it active for placement.
+function spriteSwap(selection) {
+  spriteID = selection.id;
+}
 
 // CHANGE MAP MENU =========================================================
 document.addEventListener("DOMContentLoaded", function () {
@@ -108,15 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
   };
 });
 
-// function toggleMapMenu() {
-//   var menuBox = document.getElementById("menu-box");
-//   if (menuBox.style.display == "block") {
-//     menuBox.style.display = "none";
-//   } else {
-//     menuBox.style.display = "block";
-//   }
-// }
-
 function caveMapSwap() {
   document.getElementById("currentMap").src = "../images/Maps/frostCaveMap.jpg";
   toggleMapMenu();
@@ -136,6 +85,20 @@ function dungeonMapSwap() {
   document.getElementById("currentMap").src = "../images/Maps/dungeonMap.png";
   toggleMapMenu();
 }
+
+// SPRITE BOX ===============================================================
+var button = document.getElementById("sprite-button");
+var div = document.getElementById("sprite-select-block");
+
+button.onclick = function () {
+  div.style.display = "flex";
+  button.style.display = "none";
+};
+
+div.onmouseup = function () {
+  div.style.display = "none";
+  button.style.display = "inline-flex";
+};
 
 // CHARACTER MENU ===========================================================
 // drops down dropdown menus when Clicked
