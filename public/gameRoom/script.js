@@ -114,6 +114,7 @@ var drop = function (element) {
     dropper.classList.toggle("is-active");
     button.classList.toggle("dropStyle");
   }
+
 };
 
 function collapseDrop() {
@@ -392,4 +393,90 @@ function addMessageToListDOM(text, member) {
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
   }
+}
+
+//------------------------------------------------------>>>>>>>> jeremy additions
+firebase.auth().onAuthStateChanged((user) => {
+  if(user){
+    getsCHRS();
+  }
+});
+
+function getsCHRS(){
+  user = firebase.auth().currentUser;
+  let db = firebase.firestore();
+  alert("YEYE");
+  if(!user){
+    //alert("cry1");
+    return;
+  }
+  
+  db.collection("CharacterSheets")
+  .where("userID", "==", user.uid)
+  .get()
+  .then((querySnapshot) => {
+    var stuff = '<a class="dropdown-item" onclick="setCharacter(\'newCHR\')">Create New Character</a>\n';
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, '=>', doc.data().CharacterName)
+      // create dropdown items for each character queried
+      stuff +=
+        '<a class="dropdown-item" onclick="setCharacter(\'' + doc.id + '\')">\n' +
+        doc.data().CharacterName +
+        "</a>";
+    });
+    document.getElementById("characterDrop").innerHTML = stuff;
+  })
+  .catch((error) => {
+    console.log("Error getting documents: ", error);
+  });
+};
+
+function setCharacter(key){
+  if(key == 'newCHR'){
+    sessionStorage.setItem('curchr', key);
+    window.location.href = "../character-page/character-page.html";
+  }
+  else{
+    initCHR(key);
+  }
+};
+
+
+
+function initCHR(key){
+  var user = firebase.auth().currentUser;
+  let db = firebase.firestore();
+  console.log(key);
+
+  
+  db.collection("CharacterSheets")
+  .doc(key)
+  .get()
+  .then(function(doc){
+      document.getElementById('charName').value = doc.data().CharacterName;
+      document.getElementById('strengthLevel').value = doc.data().CharacterStrength;
+      document.getElementById('dexLevel').value = doc.data().CharacterDexterity;
+      document.getElementById('constLevel').value = doc.data().CharacterConstitution;
+      document.getElementById('intLevel').value = doc.data().CharacterIntelligence;
+      document.getElementById('wisLevel').value = doc.data().CharacterWisdom;
+      document.getElementById('charLevel').value = doc.data().CharacterCharisma;
+      
+      document.getElementById('strengthBonus').value = doc.data().CharacterStrengthBonus;
+      document.getElementById('dexBonus').value = doc.data().CharacterDexterityBonus;
+      document.getElementById('constBonus').value = doc.data().CharacterConstitutionBonus;
+      document.getElementById('intBonus').value = doc.data().CharacterIntelligenceBonus;
+      document.getElementById('wisBonus').value = doc.data().CharacterWisdomBonus;
+      document.getElementById('charBonus').value = doc.data().CharacterCharismaBonus;
+
+      document.getElementById('currentHP').value = doc.data().CharacterCurrentHealth;
+      document.getElementById('currentMaxHP').value = doc.data().CharacterMaxHealth;
+      document.getElementById('currentAC').value = doc.data().CharacterArmorClass;
+      document.getElementById('charInitiative').value = doc.data().CharacterInitiative;
+      document.getElementById('charProficiency').value = doc.data().CharacterProficiency;
+      document.getElementById('charSpeed').value = doc.data().CharacterSpeed;
+
+      document.getElementById('spellFeatTextBox').value = doc.data().CharacterSpells + '\n' + doc.data().CharacterFeatures;
+      document.getElementById('equippedTextBox').value = doc.data().CharacterEquipped;
+  });
+
 }

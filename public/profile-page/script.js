@@ -1,21 +1,3 @@
-// DROP MENU CONSTRUCTOR ======================================//
-
-db.collection("CharacterSheets")
-  .where("userID", "==", user.uid)
-  .get()
-  .then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // create dropdown items for each character queried
-      document.getElementById("characterDrop").innerHTML +=
-        '<a href="../character-page/character-page.html" class="dropdown-item">\n' +
-        doc.CharacterName +
-        "</a>";
-    });
-  })
-  .catch((error) => {
-    console.log("Error getting documents: ", error);
-  });
-
 // drops down dropdown menus when Clicked
 var drop = function (element) {
   const dropper = element;
@@ -45,6 +27,7 @@ function collapseDrop() {
 firebase.auth().onAuthStateChanged((user) => {
   if(user){
     getsCHRS();
+    
   }
 });
 
@@ -53,7 +36,6 @@ function getsCHRS(){
   let db = firebase.firestore();
 
   if(!user){
-    //alert("cry1");
     return;
   }
   
@@ -78,10 +60,6 @@ function getsCHRS(){
 };
 
 function setCharacter(key){
-//set windows.session t0 blah
-//load characterpage
-//href="../character-page/character-page.html"
-  alert(key); 
   sessionStorage.setItem('curchr', key);
   window.location.href = "../character-page/character-page.html";
 };
