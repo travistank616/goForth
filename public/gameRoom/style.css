@@ -4,7 +4,7 @@
 
 body {
   color: black;
-  background-image: url(../images/gameRoomBackground.jpeg);
+  background-image: url(../images/darkBackground.png);
   background-color: darkslategrey;
 }
 
@@ -22,6 +22,8 @@ body {
 
 #leftColumn {
   min-width: 20%;
+  display: flex;
+  flex-direction: column;
 }
 
 #gameRoomLogo {
@@ -38,9 +40,21 @@ body {
   display: flex;
 }
 
+#dmBlock {
+  display: flex;
+  justify-content: center;
+}
+
 #selectRoom {
   min-height: 12em;
-  max-width: 100%;
+  max-width: 80%;
+  text-align: center;
+  color: white;
+  background-color: rgb(18, 31, 31, 0.85);
+  padding: 1em;
+  border-radius: 6px;
+  border-style: groove;
+  border-color: rgb(196, 196, 117);
 }
 
 #consultingRoom {
@@ -85,7 +99,13 @@ body {
 #campNotes {
   background-color: white;
   resize: none;
-  min-height: 3em;
+  min-height: 5em;
+  max-width: 15em;
+}
+
+.campNotesBlock {
+  padding: 0.3em;
+  align-self: center;
 }
 
 .columns.is-gapless:not(:last-child) {
@@ -138,7 +158,6 @@ body {
 }
 
 .charSprite {
-  background-image: url("../images/orcSprite.png");
   width: 32px;
   height: 32px;
   background-size: contain;
@@ -167,6 +186,7 @@ body {
   background-color: whitesmoke;
   padding: 1em;
   border-radius: 4px;
+  z-index: 4;
 }
 
 .menu-list a:hover {
@@ -178,17 +198,90 @@ body {
   display: none;
 }
 
+.mapBorder {
+  position: absolute;
+  max-width: 620px;
+  z-index: 2;
+}
+
+#map-border {
+  position: relative;
+  object-fit: contain;
+}
+
 #currentMap {
   position: relative;
   object-fit: scale-down;
 }
 
 #sprite-button {
+  position: relative;
+  top: 1em;
 }
 
-/******************Right Column********************/
+.spriteBox {
+  display: flex;
+  height: 60px;
+  max-width: 20em;
+  align-content: center;
+  overflow-x: scroll;
+}
+
+#sprite-select-block {
+  justify-content: center;
+  display: none;
+}
+
+.spriteBox > div {
+  margin-right: 5px;
+}
+
+#sprite-1,
+#sprite-2,
+#sprite-3,
+#sprite-4,
+#sprite-5,
+#sprite-6,
+#sprite-7 {
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  z-index: 3;
+}
+
+#sprite-1 {
+  background-image: url("../images/orcSprite.png");
+}
+
+#sprite-2 {
+  background-image: url("../images/knightSprite.png");
+}
+
+#sprite-3 {
+  background-image: url("../images/archerSprite.png");
+}
+
+#sprite-4 {
+  background-image: url("../images/mageSprite.png");
+}
+
+#sprite-5 {
+  background-image: url("../images/royalSprite.png");
+}
+
+#sprite-6 {
+  background-image: url("../images/paladinSprite.png");
+}
+
+#sprite-7 {
+  background-image: url("../images/woodsmanSprite.png");
+}
+
+/*RIGHT COLUMN =========================================================*/
 #rightColumn {
   min-width: 30%;
+  display: grid;
+  align-content: space-evenly;
 }
 
 .keyValuesSpace {
@@ -304,6 +397,7 @@ body {
   position: relative;
   font-weight: bold;
   top: 0.6em;
+  color: white;
 }
 
 .speedBackground {
@@ -486,6 +580,9 @@ body {
 /**************************************************/
 #chatBox {
   height: auto;
+  border-style: groove;
+  border-color: #fed538;
+  border-width: 2px;
 }
 
 .members-count,
@@ -508,7 +605,7 @@ body {
   overflow-x: wrap;
   border-spacing: 0px;
   height: 20vh;
-  background-color: black;
+  background-color: rgba(20, 9, 31, 0.9);
 }
 
 .message {
@@ -548,7 +645,7 @@ body {
   font-size: 12px;
   size: 12px;
   height: 3.5vh;
-  background-color: rgb(18, 31, 31);
+  background-color: rgb(16, 2, 15);
   color: white;
 }
 

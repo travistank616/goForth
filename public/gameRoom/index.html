@@ -20,7 +20,7 @@
 		<div id="leftColumn" class="column is-centered">
 			<!--GoForth Logo and Homescreen Link-->
 			<div id="logoBlock" class="block">
-				<img id="gameRoomLogo" class="image" src="../images/goForthIconHorizontal.png"></img>
+				<img id="gameRoomLogo" class="image" src="../images/goForthIconHorizontalFancy.png"></img>
 			</div>
 			<div class="broadcastSpace">
 				<div id="broadcastSpace" class="columns is-gapless is-multiline is-vcentered">
@@ -28,7 +28,9 @@
 					<div id="dmBlock" class="column is-12">
 						<div id="selectRoom">
 							<label for="name">Type your Name</label>
+							<br>
 							<input id="name" type="text" />
+							<br>
 							<label for="roomNumber">Type the room number</label>
 							<input id="roomNumber" type="text" />
 							<button id="joinBroadcaster">Join as Broadcaster</button>
@@ -84,6 +86,9 @@
 			</div>
 
 			<div id="map-box" class="mapBlock">
+				<div class="mapBorder">
+					<img id="map-border" class="image" src="../images/mapBorder.png">
+				</div>
 				<img id="currentMap" class="image" src="../images/Maps/forestMap.png">
 				<aside id="menu-box" class="menu hidden absolute">
 					<p class="menu-label">
@@ -97,7 +102,9 @@
 				</aside>
 			</div>
 
-			<div id="my-sprite" class="charSprite hidden absolute"></div>
+			<div id="my-sprite-group" class="spriteGroup">
+
+			</div>
 
 			<div id="menu-box" class="absolute hidden">
 				<div class="menuItem">
@@ -114,8 +121,20 @@
 				</div>
 			</div>
 
+			<div id="sprite-select-block" class="spriteBlock">
+				<div id="sprite-box" class="spriteBox">
+					<div id="sprite-1" class="newSprite" onclick="spriteSwap(this)"></div>
+					<div id="sprite-2" class="newSprite" onclick="spriteSwap(this)"></div>
+					<div id="sprite-3" class="newSprite" onclick="spriteSwap(this)"></div>
+					<div id="sprite-4" class="newSprite" onclick="spriteSwap(this)"></div>
+					<div id="sprite-5" class="newSprite" onclick="spriteSwap(this)"></div>
+					<div id="sprite-6" class="newSprite" onclick="spriteSwap(this)"></div>
+					<div id="sprite-7" class="newSprite" onclick="spriteSwap(this)"></div>
+				</div>
+			</div>
 			<button id="sprite-button" class="button">Box o' Sprites
 			</button>
+
 		</div>
 
 
@@ -351,15 +370,17 @@
 			</div>
 
 			<!--Chat Box-->
-			<div id="chatBox" class="container" style="height: 23vh;">
-				<!--<div class="members-count">-</div>
-				<div class="members-list">-</div>-->
-				<div class="messages" style="line-height: 14px"></div>
-				<form class="message-form" onsubmit="return false;">
-					<input class="message-form__input" placeholder="Type a message.." type="text" onfocus="''" />
-				</form>
-				<script src="./script.js"></script>
+			<div class="chatBoxWrapper">
+				<div id="chatBox" class="container" style="height: 23vh;">
+					<!--<div class="members-count">-</div>
+					<div class="members-list">-</div>-->
+					<div class="messages" style="line-height: 14px"></div>
+					<form class="message-form" onsubmit="return false;">
+						<input class="message-form__input" placeholder="Type a message.." type="text" onfocus="''" />
+					</form>
+					<script src="./script.js"></script>
 
+				</div>
 			</div>
 		</div>
 	</section>
