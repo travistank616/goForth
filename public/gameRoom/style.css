@@ -44,7 +44,33 @@ body {
 }
 
 #consultingRoom {
-  height: 12em;
+  height: auto;
+}
+
+.videoBlock {
+  padding: 1em;
+  position: relative;
+  top: 0.3em;
+  height: auto;
+}
+
+.videoMask {
+  max-width: 270px;
+  border-radius: 25px;
+  height: 11em;
+  overflow: hidden;
+}
+#videoFeed {
+  position: relative;
+}
+
+.videoBorder {
+  position: relative;
+  max-width: 300px;
+}
+
+#videoBorder {
+  position: absolute;
 }
 
 .currentPartyBlock {
@@ -53,6 +79,7 @@ body {
 
 #partyBlock {
   max-width: 50vw;
+  margin-top: 1em;
 }
 
 #campNotes {
@@ -71,6 +98,7 @@ body {
 /*****************Middle Column********************/
 #middleColumn {
   min-width: 50%;
+  text-align: center;
 }
 
 .charBannerSpace {
@@ -109,6 +137,13 @@ body {
   font-size: 2em;
 }
 
+.charSprite {
+  background-image: url("../images/orcSprite.png");
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+}
+
 .charNameBlock {
   display: flex;
   align-content: center;
@@ -122,9 +157,33 @@ body {
   align-content: center;
 }
 
+.absolute {
+  position: absolute;
+  top: var(--mouse-y);
+  left: var(--mouse-x);
+}
+
+#menu-box {
+  background-color: whitesmoke;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+.menu-list a:hover {
+  background-color: rgb(125, 147, 255);
+  color: whitesmoke;
+}
+
+.hidden {
+  display: none;
+}
+
 #currentMap {
   position: relative;
   object-fit: scale-down;
+}
+
+#sprite-button {
 }
 
 /******************Right Column********************/
@@ -414,6 +473,12 @@ body {
   background-color: transparent;
   resize: none;
   overflow-y: scroll;
+}
+
+#char-block {
+  text-align: center;
+  position: relative;
+  top: 2em;
 }
 
 /**************************************************/

@@ -36,9 +36,16 @@
 						</div>
 
 						<div id="consultingRoom" style="display:none">
-							<video autoplay></video>
-							<<p id="broadcasterName">
-								</p>
+							<div class="videoBorder">
+								<img id="videoBorder" class="image" src="../images/videoBorder.png">
+							</div>
+							<div class="videoBlock">
+								<div class="videoMask">
+									<video id="videoFeed" autoplay></video>
+								</div>
+							</div>
+							<p id="broadcasterName">
+							</p>
 						</div>
 					</div>
 					<!-------------------------Party Box----------------------->
@@ -76,10 +83,41 @@
 				</div>
 			</div>
 
-			<div class="mapBlock">
+			<div id="map-box" class="mapBlock">
 				<img id="currentMap" class="image" src="../images/Maps/forestMap.png">
+				<aside id="menu-box" class="menu hidden absolute">
+					<p class="menu-label">
+						Your Maps:
+					</p>
+					<div class="menu-list">
+						<a id="grid-map" onclick="gridMapSwap()">Grid</a>
+						<a id="cave-map" onclick="caveMapSwap()">Ice Cave</a>
+						<a id="forest-map" onclick="forestMapSwap()">Forest</a>
+						<a id="dungeon-map" onclick="dungeonMapSwap()">Dungeon</a>
+				</aside>
 			</div>
+
+			<div id="my-sprite" class="charSprite hidden absolute"></div>
+
+			<div id="menu-box" class="absolute hidden">
+				<div class="menuItem">
+					<p id="cave-map" onclick="caveMapSwap()">Ice Cave</p>
+				</div>
+				<div class="menuItem">
+					<p id="forest-map" onclick="forestMapSwap()">Forest</p>
+				</div>
+				<div class="menuItem">
+					<p id="grid-map" onclick="gridMapSwap()">Grid</p>
+				</div>
+				<div class="menuItem">
+					<p id="dungeon-map" onclick="dungeonMapSwap()">Dungeon</p>
+				</div>
+			</div>
+
+			<button id="sprite-button" class="button">Box o' Sprites
+			</button>
 		</div>
+
 
 		<div id="rightColumn" class="column">
 			<div class="keyValuesSpace">
@@ -256,6 +294,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div id="charPosessionsSpace" class="column">
 					<!--Currently equipped item-->
 					<div class="equippedBlock">
@@ -269,6 +308,7 @@
 						</div>
 					</div>
 					<!--Spells and Feats-->
+
 					<div class="spellsNfeatsBlock">
 						<div class="spellFeatBackgroundBlock">
 							<div class="spellFeatBackground">
@@ -279,8 +319,37 @@
 							<textarea id="spellFeatTextBox" class="textarea"></textarea>
 						</div>
 					</div>
+					<div id="char-block" class="block">
+						<div id="characterDropdown" class="dropdown" onclick="drop(this)">
+							<div class="dropdown-trigger">
+								<button class="button full is-medium" id="charButton" aria-haspopup="true"
+									aria-controls="dropdown-menu">
+									<span>CHARACTERS</span>
+								</button>
+							</div>
+
+							<div class="dropdown-menu" id="dropdown-menu" role="menu">
+								<div id="characterDrop" class="dropdown-content">
+
+									<!--Load user characters here-->
+									<!--each character should be:
+							
+							  <a href="link to character page" class="dropdown-item">
+								"Character Name"
+							  </a>
+			  
+							-->
+
+									<a href="../character-page/character-page.html" class="dropdown-item">
+										Create New Character
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+
 			<!--Chat Box-->
 			<div id="chatBox" class="container" style="height: 23vh;">
 				<!--<div class="members-count">-</div>

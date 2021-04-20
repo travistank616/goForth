@@ -1,3 +1,169 @@
+// DRAG SPRITE ======================================================================
+dragElement(document.getElementById("my-sprite"));
+
+function dragElement(el) {
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
+  el.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.prevenDefault();
+    // get mouse cursor position at startup
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calc new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set new sprite position
+    el.style.top = el.offsetTop - pos2 + "px";
+    el.style.left = el.offsetLeft - pos1 + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+
+// CLICK-TO-MOVE SPRITE =============================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const ele = document.getElementById("map-box");
+  const sprite = document.getElementById("my-sprite");
+
+  ele.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const rect = ele.getBoundingClientRect();
+    const x = e.clientX;
+    const y = e.clientY - (rect.top - 60);
+
+    // set menu position
+    sprite.style.setProperty("--mouse-y", y + "px");
+    sprite.style.setProperty("--mouse-x", x + "px");
+
+    //show the menu
+    sprite.classList.remove("hidden");
+
+    document.addEventListener("click", documentClickHandler);
+  });
+
+  const documentClickHandler = function (e) {
+    const isClicked = sprite.contains(e.target);
+    if (isClicked) {
+      // hide the menu
+      sprite.classList.add("hidden");
+
+      // remove the even handler
+      document.removeEventListener("click", documentClickHandler);
+    }
+  };
+});
+
+// CHANGE MAP MENU =========================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const ele = document.getElementById("map-box");
+  const menu = document.getElementById("menu-box");
+
+  ele.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+
+    const rect = ele.getBoundingClientRect();
+    const x = e.clientX;
+    const y = e.clientY - rect.top;
+
+    // set menu position
+    menu.style.setProperty("--mouse-y", y + "px");
+    menu.style.setProperty("--mouse-x", x + "px");
+
+    //show the menu
+    menu.classList.remove("hidden");
+
+    document.addEventListener("click", documentClickHandler);
+  });
+
+  const documentClickHandler = function (e) {
+    const isClickedOutside = !menu.contains(e.target);
+    const newSelection = menu.contains(e.target);
+    if (isClickedOutside || newSelection) {
+      // hide the menu
+      menu.classList.add("hidden");
+
+      // remove the even handler
+      document.removeEventListener("click", documentClickHandler);
+    }
+  };
+});
+
+// function toggleMapMenu() {
+//   var menuBox = document.getElementById("menu-box");
+//   if (menuBox.style.display == "block") {
+//     menuBox.style.display = "none";
+//   } else {
+//     menuBox.style.display = "block";
+//   }
+// }
+
+function caveMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/frostCaveMap.jpg";
+  toggleMapMenu();
+}
+
+function forestMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/forestMap.png";
+  toggleMapMenu();
+}
+
+function gridMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/dndGrid.png";
+  toggleMapMenu();
+}
+
+function dungeonMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/dungeonMap.png";
+  toggleMapMenu();
+}
+
+// CHARACTER MENU ===========================================================
+// drops down dropdown menus when Clicked
+var drop = function (element) {
+  const dropper = element;
+  const dropped = element.querySelector(".is-active");
+  const button = element.querySelector(".button");
+
+  if (dropped) {
+    dropper.classList.remove("is-active");
+    button.classList.remove("dropStyle");
+  } else {
+    dropper.classList.toggle("is-active");
+    button.classList.toggle("dropStyle");
+  }
+};
+
+function collapseDrop() {
+  const dropMenu = document.querySelector(".dropdown");
+  const dropped = dropMenu.querySelector(".is-active");
+  const button = element.querySelector(".button");
+
+  if (dropped) {
+    dropper.classList.remove("is-active");
+    button.classList.remove("dropStyle");
+  }
+}
+
 //------------------------------------------------------------------------//
 //----------------------------CHAT BOX SCRIPT-----------------------------//
 //------------------------------------------------------------------------//
