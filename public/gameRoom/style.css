@@ -76,6 +76,7 @@ body {
 }
 #videoFeed {
   position: relative;
+  transform: rotate(180deg);
 }
 
 .videoBorder {
