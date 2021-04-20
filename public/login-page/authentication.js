@@ -9,18 +9,7 @@ function handleAuth() {
     this.handleLogIn(email, password);
 }
 
-
-//Connecting to database
 let database  = firebase.database();
-// handleLogIn.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     database.ref('/email/' + email.nodeValue).set({
-//       email : email.value,
-//       password : password.value
-//     });
-// });
-
-
 
 function handleLogIn(email, password) {
   firebase
@@ -28,7 +17,7 @@ function handleLogIn(email, password) {
   .signInWithEmailAndPassword(email, password).then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-        alert("Signed in");
+        alert("Signed in as" + user.email);
   })
   .catch(function(error) {
     // TODO: alert the user to these properly
@@ -85,24 +74,6 @@ function handleSignUp(email, password, username) {
     });
     // at this point email and password should be approved
   }
-
-/*
-  firebase
-    .auth()
-    .createUser({email: email, password: password, displayName: username})
-    .catch(function(error) {
-      // Handle Errors here.
-      let errorCode = error.code;
-      let errorMessage = error.message;
-      if (errorCode === "auth/wrong-password") {
-        alert("This is the wrong password, please try again.");
-      } else {
-        alert(errorMessage);
-      }
-      console.log(error);
-      document.getElementById("quickstart-sign-in").disabled = false;
-    });
-*/
 
   function toggleLogIn() {
     let isLogIn =

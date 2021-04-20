@@ -2,18 +2,19 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width-device-width, initial-scale=1" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
-  <script src="character-page.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+
 </head>
 
-<body style="background-image: url(../images/gameRoomBackground.jpeg); background-color: darkslategrey;">
+<body onload="initpage()" style="background-image: url(../images/gameRoomBackground.jpeg); background-color: darkslategrey;">
 
   <!--//////////////////////////////////////////////////-->
   <!------------------Navbar Section---------------------->
@@ -21,7 +22,7 @@
   <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
     <div class="navbar-brand" style="padding-left: 5px; padding-top: 3px">
       <figure class="image is-48x48">
-        <img src="../../images/goForthIcon.png" />
+        <img src="../images/goForthIcon.png" />
       </figure>
 
       <!--Load in current user's Username below-->
@@ -73,117 +74,147 @@
       </div>
 
       <div class="skillSpace">
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/strengthPlac.png">
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/strengthPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="strengthBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="strengthLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/dexPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/dexPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="dexBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="dexLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/conPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/conPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="constBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="constLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/intelPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/intelPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="intBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="intLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/wisPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/wisPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="wisBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="wisLevel" class="input" type="text">
             </div>
           </div>
         </div>
-        <div class="skillBlock">
-          <div class="skillPlac">
-            <div class="skillBackground">
-              <img class="image" src="../images/charismaPlac.png">
+
+        <div class="skillBlockWrapper">
+          <div class="skillBlock">
+            <div class="skillBackgroundBlock">
+              <div class="skillBackground">
+                <img id="skillBackground" class="image" src="../images/charismaPlac.png">
+              </div>
             </div>
             <div class="skillBonus">
-              <p>+3</p>
+              <input id="charBonus" class="input" type="text">
             </div>
             <div class="skillLevel">
-              <p>15</p>
+              <input id="charLevel" class="input" type="text">
             </div>
           </div>
         </div>
       </div>
 
       <div class="keyValues">
-        <div class="valuesWrapper">
-          <div class="valueBlock">
+        <div id="hpBlock" class="valuesWrapper">
+          <div class="valuesBlock">
             <div class="hpBackground">
               <img class="image" src="../images/hpBackground.png">
             </div>
-            <div class="characterHealth">
-              <p>58 / 65</p>
+            <div class="charHealthBlock">
+              <div class="currentHP">
+                <input id="currentHP" class="input" type="text">
+              </div>
+              <span id="healthQ">/</span>
+              <div class="currentMaxHP">
+                <input id="currentMaxHP" class="input" type="text">
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="valuesWrapper">
-          <div class="valueBlock">
+
+        <div id="acBlock" class="valuesWrapper">
+          <div class="valuesBlock">
             <div class="acBackground">
               <img class="image" src="../images/acBackground.png">
             </div>
-            <div class="characterAC">
-              <p>15</p>
+            <div class="charACBlock">
+              <div class="currentAC">
+                <input id="currentAC" class="input" type="text">
+              </div>
             </div>
           </div>
         </div>
-
-        <div class="valuesWrapper">
-          <div class="valueBlock">
+        <div id="button">
+          <button id="saveBtn" class ="button" onclick="onclick">Save</button>
+        </div>
+        <div id="otherValBlock" class="valuesWrapper">
+          <div class="valuesBlock">
             <div class="initiativeBlock">
               <div class="initiativeBackground">
-                <img class="image" src="../images/initiativeBackground2.png">
+                <img id="initiativeBackground" class="image" src="../images/initiativeBackground2.png">
               </div>
-              <div class="characterInitiative">
-                <p>+4</p>
+              <div class="charInitiativeBlock">
+                <div class="charInitiative">
+                  <input id="charInitiative" class="input" type="text">
+                </div>
               </div>
               <div class="initLabel">
                 <p>INITIATIVE</p>
@@ -191,13 +222,27 @@
             </div>
             <div class="proficiencyBlock">
               <div class="proficiencyBackground">
-                <img class="image" src="../images/proficiencyBackground.png">
+                <img id="proficiencyBackground" class="image" src="../images/proficiencyBackground.png">
               </div>
-              <div class="characterProficiency">
-                <p>+2</p>
+              <div class="charProficiencyBlock">
+                <div class="charProficiency">
+                  <input id="charProficiency" class="input" type="text">
+                </div>
               </div>
               <div class="profLabel">
                 <p>PROFICIENCY</p>
+              </div>
+            </div>
+          </div>
+          <div id="speedBlock" class="valuesBlock">
+            <div class="speedBlock">
+              <div class="speedBackground">
+                <img id="speedBackground" class="image" src="../images/speedPlac.png">
+              </div>
+              <div class="charSpeedBlock">
+                <div class="charSpeed">
+                  <input id="charSpeed" class="input" type="text">
+                </div>
               </div>
             </div>
           </div>
@@ -294,9 +339,34 @@
     </div>
   </section>
 
-  <script>
 
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyB1Nex5M3sDGXZmO4c7tdX49Q7nK29oGa0",
+      authDomain: "go-forth-735be.firebaseapp.com",
+      databaseURL: "https://go-forth-735be-default-rtdb.firebaseio.com",
+      projectId: "go-forth-735be",
+      storageBucket: "go-forth-735be.appspot.com",
+      messagingSenderId: "334936808560",
+      appId: "1:334936808560:web:6103e713ed3205fe4168b5",
+      measurementId: "G-LZ46GGKHKG"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
   </script>
+  <script src="character-page.js"></script>
 
 </body>
 

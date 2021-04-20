@@ -1,3 +1,136 @@
+// CLICK-TO-MOVE SPRITE =============================================================
+
+var battleMap = document.querySelector("#map-box");
+var spriteID;
+
+// Watch for clicks on the battle map, and place sprite
+// at location of the click.
+battleMap.addEventListener("click", function (event) {
+  const rect = battleMap.getBoundingClientRect();
+  var x = event.clientX;
+  var y = event.clientY - (rect.top - 60);
+
+  document.getElementById("my-sprite-group").innerHTML +=
+    '<div id="' +
+    spriteID +
+    '"class="charSprite absolute" style="top: ' +
+    y +
+    "px; left: " +
+    x +
+    'px" onclick="deleteSprite(this)"></div>';
+});
+
+// Click active sprite to hide.
+function deleteSprite(sprite) {
+  sprite.style.display = "none";
+}
+
+// Click desired sprite from the box o' sprites
+// to make it active for placement.
+function spriteSwap(selection) {
+  spriteID = selection.id;
+}
+
+// CHANGE MAP MENU =========================================================
+document.addEventListener("DOMContentLoaded", function () {
+  const ele = document.getElementById("map-box");
+  const menu = document.getElementById("menu-box");
+
+  ele.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+
+    const rect = ele.getBoundingClientRect();
+    const x = e.clientX;
+    const y = e.clientY - rect.top;
+
+    // set menu position
+    menu.style.setProperty("--mouse-y", y + "px");
+    menu.style.setProperty("--mouse-x", x + "px");
+
+    //show the menu
+    menu.classList.remove("hidden");
+
+    document.addEventListener("click", documentClickHandler);
+  });
+
+  const documentClickHandler = function (e) {
+    const isClickedOutside = !menu.contains(e.target);
+    const newSelection = menu.contains(e.target);
+    if (isClickedOutside || newSelection) {
+      // hide the menu
+      menu.classList.add("hidden");
+
+      // remove the even handler
+      document.removeEventListener("click", documentClickHandler);
+    }
+  };
+});
+
+function caveMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/frostCaveMap.jpg";
+  toggleMapMenu();
+}
+
+function forestMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/forestMap.png";
+  toggleMapMenu();
+}
+
+function gridMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/dndGrid.png";
+  toggleMapMenu();
+}
+
+function dungeonMapSwap() {
+  document.getElementById("currentMap").src = "../images/Maps/dungeonMap.png";
+  toggleMapMenu();
+}
+
+// SPRITE BOX ===============================================================
+var button = document.getElementById("sprite-button");
+var div = document.getElementById("sprite-select-block");
+
+button.onclick = function () {
+  div.style.display = "flex";
+  button.style.display = "none";
+};
+
+div.onmouseup = function () {
+  div.style.display = "none";
+  button.style.display = "inline-flex";
+};
+
+// CHARACTER MENU ===========================================================
+// drops down dropdown menus when Clicked
+var drop = function (element) {
+  const dropper = element;
+  const dropped = element.querySelector(".is-active");
+  const button = element.querySelector(".button");
+
+  if (dropped) {
+    dropper.classList.remove("is-active");
+    button.classList.remove("dropStyle");
+  } else {
+    dropper.classList.toggle("is-active");
+    button.classList.toggle("dropStyle");
+  }
+
+};
+
+function collapseDrop() {
+  const dropMenu = document.querySelector(".dropdown");
+  const dropped = dropMenu.querySelector(".is-active");
+  const button = element.querySelector(".button");
+
+  if (dropped) {
+    dropper.classList.remove("is-active");
+    button.classList.remove("dropStyle");
+  }
+}
+
+//------------------------------------------------------------------------//
+//----------------------------CHAT BOX SCRIPT-----------------------------//
+//------------------------------------------------------------------------//
 const CLIENT_ID = "NbnM9Rxcgrt5Nd29";
 
 const drone = new ScaleDrone(CLIENT_ID, {
@@ -260,4 +393,90 @@ function addMessageToListDOM(text, member) {
   if (wasTop) {
     el.scrollTop = el.scrollHeight - el.clientHeight;
   }
+}
+
+//------------------------------------------------------>>>>>>>> jeremy additions
+firebase.auth().onAuthStateChanged((user) => {
+  if(user){
+    getsCHRS();
+  }
+});
+
+function getsCHRS(){
+  user = firebase.auth().currentUser;
+  let db = firebase.firestore();
+  alert("YEYE");
+  if(!user){
+    //alert("cry1");
+    return;
+  }
+  
+  db.collection("CharacterSheets")
+  .where("userID", "==", user.uid)
+  .get()
+  .then((querySnapshot) => {
+    var stuff = '<a class="dropdown-item" onclick="setCharacter(\'newCHR\')">Create New Character</a>\n';
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id, '=>', doc.data().CharacterName)
+      // create dropdown items for each character queried
+      stuff +=
+        '<a class="dropdown-item" onclick="setCharacter(\'' + doc.id + '\')">\n' +
+        doc.data().CharacterName +
+        "</a>";
+    });
+    document.getElementById("characterDrop").innerHTML = stuff;
+  })
+  .catch((error) => {
+    console.log("Error getting documents: ", error);
+  });
+};
+
+function setCharacter(key){
+  if(key == 'newCHR'){
+    sessionStorage.setItem('curchr', key);
+    window.location.href = "../character-page/character-page.html";
+  }
+  else{
+    initCHR(key);
+  }
+};
+
+
+
+function initCHR(key){
+  var user = firebase.auth().currentUser;
+  let db = firebase.firestore();
+  console.log(key);
+
+  
+  db.collection("CharacterSheets")
+  .doc(key)
+  .get()
+  .then(function(doc){
+      document.getElementById('charName').value = doc.data().CharacterName;
+      document.getElementById('strengthLevel').value = doc.data().CharacterStrength;
+      document.getElementById('dexLevel').value = doc.data().CharacterDexterity;
+      document.getElementById('constLevel').value = doc.data().CharacterConstitution;
+      document.getElementById('intLevel').value = doc.data().CharacterIntelligence;
+      document.getElementById('wisLevel').value = doc.data().CharacterWisdom;
+      document.getElementById('charLevel').value = doc.data().CharacterCharisma;
+      
+      document.getElementById('strengthBonus').value = doc.data().CharacterStrengthBonus;
+      document.getElementById('dexBonus').value = doc.data().CharacterDexterityBonus;
+      document.getElementById('constBonus').value = doc.data().CharacterConstitutionBonus;
+      document.getElementById('intBonus').value = doc.data().CharacterIntelligenceBonus;
+      document.getElementById('wisBonus').value = doc.data().CharacterWisdomBonus;
+      document.getElementById('charBonus').value = doc.data().CharacterCharismaBonus;
+
+      document.getElementById('currentHP').value = doc.data().CharacterCurrentHealth;
+      document.getElementById('currentMaxHP').value = doc.data().CharacterMaxHealth;
+      document.getElementById('currentAC').value = doc.data().CharacterArmorClass;
+      document.getElementById('charInitiative').value = doc.data().CharacterInitiative;
+      document.getElementById('charProficiency').value = doc.data().CharacterProficiency;
+      document.getElementById('charSpeed').value = doc.data().CharacterSpeed;
+
+      document.getElementById('spellFeatTextBox').value = doc.data().CharacterSpells + '\n' + doc.data().CharacterFeatures;
+      document.getElementById('equippedTextBox').value = doc.data().CharacterEquipped;
+  });
+
 }
