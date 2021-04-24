@@ -405,7 +405,6 @@ firebase.auth().onAuthStateChanged((user) => {
 function getsCHRS(){
   user = firebase.auth().currentUser;
   let db = firebase.firestore();
-  alert("YEYE");
   if(!user){
     //alert("cry1");
     return;

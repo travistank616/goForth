@@ -17,7 +17,7 @@ function handleLogIn(email, password) {
   .signInWithEmailAndPassword(email, password).then((userCredential) => {
     // Signed in
     var user = userCredential.user;
-        alert("Signed in as" + user.email);
+        alert("Signed in as " + user.email);
   })
   .catch(function(error) {
     // TODO: alert the user to these properly
