@@ -1,15 +1,227 @@
+/* LEFT COLUMN ================================
+*/
+#left-column {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2em;
+}
+
+.columns:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.marqueeBackground {
+  position: relative;
+  display: grid;
+}
+
+#marqueeBackground {
+  position: absolute;
+  max-height: 28em;
+  justify-self: center;
+}
+
+.infoBackground {
+  position: relative;
+  display: grid;
+}
+
+#infoBackground {
+  position: absolute;
+  max-width: 25em;
+  justify-self: center;
+}
+
+#titleLogo {
+  max-height: 16em;
+}
+
+.titleMarquee {
+  width: max-content;
+  align-self: center;
+  padding: 0.5em;
+  font-size: 2em;
+  padding-bottom: 0;
+  color: #ffffff;
+}
+
+.marqueeBlock {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logoBlock {
+  max-width: 60%;
+  align-self: center;
+}
+
+.infoBlock {
+  padding-top: 4em;
+}
+
+.infoWrapper {
+  position: relative;
+  padding-top: 1em;
+}
+
+#gameRoom-block,
+#charSheet-block {
+  display: flex;
+  justify-content: space-around;
+}
+
+#iceCave {
+  padding-right: 2em;
+}
+
+#map-block {
+  display: flex;
+  width: 50%;
+}
+
+#right-column {
+  padding: 2em;
+}
+
+/***************NAVBAR STYLES***************/
+.navbar {
+  color: white;
+  background-color: rgba(217, 138, 19, 0.7);
+  padding: 0;
+  font-family: MedievalSharp, cursive;
+}
+
+.navbar-item,
+.navbar-link {
+  color: white;
+  margin-right: 0;
+}
+
+.navbar-end {
+  padding-right: 1em;
+}
+
+.navbar-menu {
+  display: block;
+  background-color: transparent;
+}
+
+#navLinks {
+  padding-top: 0.4em;
+}
+
+#registerButton {
+  background-color: #054051;
+  border-radius: 6px;
+  display: inline-flex;
+  padding: 0;
+  padding-right: 1em;
+  margin-top: 0.2em;
+}
+
+#loginButton {
+  display: inline-flex;
+  background-color: #fcb040;
+  border-radius: 6px;
+  padding: 0;
+  padding-right: 1em;
+}
+
+#buttonIcon {
+  max-height: 3em;
+  max-width: 3em;
+}
+
+#registerText,
+#loginText {
+  align-self: center;
+}
+
+.nav-links ul li {
+  padding: 0;
+  padding-right: 1em;
+}
+
+.navbar-link.is-active,
+.navbar-link:focus,
+.navbar-link:focus-within,
+.navbar-link:hover,
+a.navbar-item.is-active,
+a.navbar-item:focus,
+a.navbar-item:focus-within,
+a.navbar-item:hover {
+  color: inherit;
+}
+
+.navbar-link:not(.is-arrowless)::after {
+  /* border-color: #3273dc; */
+  border-color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-dropdown {
+    /* background-color: #fff; */
+    /* border-bottom-left-radius: 6px; */
+    /* border-bottom-right-radius: 6px; */
+    /* border-top: 2px solid #dbdbdb; */
+    background-color: #090809;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top: 2px solid #e40712;
+  }
+}
+
+.navbar-dropdown {
+  /* padding-bottom: .5rem; */
+  /* padding-top: .5rem; */
+  padding: 2px;
+}
+
+.navbar-dropdown a.navbar-item {
+  padding-right: 5rem;
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  background-color: #2b262b;
+}
+
+@media screen and (min-width: 1024px) {
+  .navbar-item.has-dropdown.is-active .navbar-link,
+  .navbar-item.has-dropdown:focus .navbar-link,
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent;
+  }
+}
+
+.navbar-dropdown a.navbar-item:focus,
+.navbar-dropdown a.navbar-item:hover {
+  color: white;
+  background-color: #2f1111;
+}
+
+.navbar.has-shadow {
+  box-shadow: 0 2px 0 0 #c14a9b;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-.header {
-  min-height: 100vh;
-  width: 100%;
+body {
   background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)),
     url(images/Image_Table_Edited.jpg);
   background-position: center;
   background-size: cover;
+  min-height: 100vh;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
   position: relative;
 }
 
@@ -46,7 +258,7 @@ nav img {
   content: "";
   width: 0%;
   height: 2px;
-  background: #0094ff;
+  background: #26516f;
   display: block;
   margin: auto;
   transition: 0.5s;

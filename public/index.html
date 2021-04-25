@@ -4,30 +4,119 @@
 <head>
     <meta name="viewport" content="with=device-width, initial-scale=1.0">
     <title>Go Forth Supporting Website</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <section class="header">
-        <nav>
-            <a href="index.html"><img src="images/logo.png"></a>
+    <!--//////////////////////////////////////////////////-->
+    <!------------------Navbar Section---------------------->
+    <!--//////////////////////////////////////////////////-->
+    <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <!--Load in current user's Username below-->
             <div class="nav-links">
-                <ul>
-                    <li><a href="login-page/loginPage.html">LOGIN</a></li>
+                <ul id="navLinks">
+                    <li><a href="index.html">HOME</a></li>
+
                     <li><a href="about-page/about-page.html">ABOUT</a></li>
                     <li><a href="profile-page/profile-page.html">PROFILE</a></li>
                     <li><a href="contact-page/contact-page.html">CONTACT US</a></li>
                 </ul>
             </div>
-        </nav>
+        </div>
 
-        <div class="text-box">
+        <div id="navbar-menu" class="navbar-menu">
+            <div class="navbar-end">
+                <div class="nav-links">
+                    <ul>
+                        <li id="registerButton">
+                            <i class="buttonIcon">
+                                <img id="buttonIcon" class="image" src="images/loginLogo.png">
+                            </i><a id="registerText" href="login-page/loginPage.html">REGISTER</a>
+                        </li>
+                        <li id="loginButton">
+                            <i class="buttonIcon">
+                                <img id="buttonIcon" class="image" src="images/keyIcon.png">
+                            </i><a id="loginText" href="login-page/loginPage.html">LOGIN</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="columns">
+        <div id="left-column" class="column is-4 has-text-centered">
+            <div class="marqueeBackground">
+                <img id="marqueeBackground" class="image" src="images/titleMarquee.png">
+            </div>
+            <div class="marqueeBlock">
+                <div class="titleMarquee">
+                    <h2 style="font-family: MedievalSharp, cursive; font-size: 1.5em;">Welcome</h2>
+                    <h2 style="font-family: MedievalSharp, cursive; font-size: 0.7em;">TO</h2>
+                </div>
+                <div class="logoBlock">
+                    <img id="titleLogo" src="images/logoWhite.png">
+                </div>
+                <h1 style="font-family: MedievalSharp, cursive; font-size: 1em; color: white;">A cutting-edge virtual
+                    tabletop!</h1>
+            </div>
+
+            <div class="infoBlock">
+                <div class="infoBackground">
+                    <img id="infoBackground" class="image" src="images/infoBackground.png">
+                </div>
+                <div class="infoWrapper">
+                    <h1 style="font-family: MedievalSharp, cursive; font-size: 0.8em; color: white;">- gather your party
+                        'round the Go Forth! Gameroom!</h1>
+                    <br>
+                    <h1 style="font-family: MedievalSharp, cursive; font-size: 0.8em; color: white;">- create custom
+                        maps and dungeons!</h1>
+                    <br>
+                    <h1 style="font-family: MedievalSharp, cursive; font-size: 0.8em; color: white;">- connect with your
+                        DM as they broadcast live!</h1>
+                    <br>
+                    <h1 style="font-family: MedievalSharp, cursive; font-size: 0.8em; color: white;">- track character
+                        progress with our online Character Sheet!</h1>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="right-column" class="column has-text-centered">
+            <div class="columns is-multiline">
+                <div class="column is-full has-text-centered">
+                    <div id="gameRoom-block" class="image-block">
+                        <img class="image" src="images/gameRoomSS.png">
+                    </div>
+                </div>
+                <div class="column is-full has-text-centered">
+                    <div id="map-block" class="image-block">
+                        <img id="iceCave" class="image" src="images/iceCaveSS.png">
+                        <img class="image" src="images/dungeonSS.png">
+                    </div>
+
+                </div>
+                <div class="column is-full has-text-centered">
+                    <div id="charSheet-block" class="image-block">
+                        <img class="image" src="images/characterSheetSS.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- <div class="text-box">
             <h1>Go Forth! Virtual Table Top</h1>
             <p>
                 Welcome to Go Forth!, an online virtual table top to connect with your friends and play tabletop games!
             </p>
             <a href="login-page/loginPage.html" class="login-btn">Login to Get Rolling!</a>
-        </div>
+        </div> -->
     </section>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
